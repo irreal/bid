@@ -13,7 +13,7 @@
   publish = "dist/"
 
   # Default build command.
-  command = "npm run build"
+  command = "run build"
 
   # Directory with the lambda functions to deploy to AWS.
   # functions = "project/functions/"
