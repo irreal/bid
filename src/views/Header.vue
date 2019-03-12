@@ -2,7 +2,7 @@
  <header class="header">
     <i @click="openMenu()" class="fas fa-bars header__menu"></i>
     <div class="header__search">
-      <input class="header__input" placeholder="Pretraga..." />
+      <input class="header__input" placeholder="Pretraga... novi header :)" />
     </div>
     <div class="header__avatar">
       <div class="dropdown">
