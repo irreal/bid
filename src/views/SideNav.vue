@@ -9,7 +9,7 @@
       <ul class="navList">
         <li class="navList__heading">Izveštaji<i class="far fa-file-alt"></i></li>
           <li>
-          <div class="navList__subheading row row--align-v-center">
+          <div @click="$router.push('plans')" class="navList__subheading row row--align-v-center">
             <span class="navList__subheading-icon"><i class="fas fa-chart-line"></i></span>
             <span class="navList__subheading-title">Planiranje</span>
           </div>

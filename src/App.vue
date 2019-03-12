@@ -10,38 +10,11 @@
 
     <Footer/>
   </div>
-
-  <!-- <div id="app" class="grid-container">
-    <header class="header">
-      <div id="nav">
-        <router-link to="/">Početna</router-link>|
-        <router-link to="/plans">Planovi</router-link>
-      </div>
-    </header>
-    <aside class="sidenav"></aside>
-    <main class="main">
-      <router-view/>
-    </main>
-    <footer class="footer"></footer>
-  </div>-->
 </template>
 
 <style lang="scss">
-// Sass tils
-$color-fiord: #394263; // sidenav bg & dark text
-$color-white: #fff; // card bg
-$color-athens-gray: #eaedf1; // content bg
-$color-catskill-white: #f9fafc; // top nav bg
-$color-abbey: #777; // gray text
-$color-mischka: #dadae3; // light gray for menu icon
-$color-java: #1bbae1; // blue text
-$color-mine-shaft: #333; // main section header bg
-$color-zest: #e67e22; // document icon bg
-$color-jungle-green: #27ae60; // calendar icon bg
-$color-cinnabar: #e74c3c; // main icon bg, red
-$color-amethyst: #af64cc; // main photo icon bg
-$color-transparent: rgba(255, 255, 255, 0.5);
-$color-alto: #d3d3d3;
+
+@import "./src/styles/colors.scss";
 
 $height-header: 50px;
 $height-footer: 50px;
@@ -499,66 +472,6 @@ a {
   margin: 20px;
 }
 
-.overviewCard {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px;
-  background-color: $color-white;
-  transform: translateY(0);
-  transition: all 0.3s;
-
-  &-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    font-size: 21px;
-    color: #fff;
-
-    &--document {
-      background-color: $color-zest;
-    }
-
-    &--calendar {
-      background-color: $color-jungle-green;
-    }
-
-    &--mail {
-      background-color: $color-cinnabar;
-    }
-
-    &--photo {
-      background-color: $color-amethyst;
-    }
-  }
-
-  &-description {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &-title {
-    font-size: 18px;
-    color: $color-java;
-    margin: 0;
-  }
-
-  &-subtitle {
-    margin: 2px;
-    color: $color-abbey;
-  }
-
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -841,12 +754,6 @@ a {
 
     &__brand-close {
       visibility: hidden;
-    }
-  }
-
-  .main-header {
-    &__intro-wrapper {
-      padding: 0 30px;
     }
   }
 

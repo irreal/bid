@@ -2,82 +2,13 @@
   <div>
     <div class="main-header">
       <div class="main-header__intro-wrapper">
-        <div class="main-header__welcome">
-          <div class="main-header__welcome-title text-light">Zdravo,
-            <strong>Žarko</strong>
-          </div>
-          <div class="main-header__welcome-subtitle text-light"></div>
-        </div>
-        <div class="quickview">
-          <div class="quickview__item">
-            <div class="quickview__item-total">10</div>
-            <div class="quickview__item-description">
-              <i class="far fa-file-alt"></i>
-              <span class="text-light">Izveštaja</span>
-            </div>
-          </div>
-          <div class="quickview__item">
-            <div class="quickview__item-total">0</div>
-            <div class="quickview__item-description">
-              <i class="far fa-comment"></i>
-              <span class="text-light">Poruka</span>
-            </div>
-          </div>
-          <div class="quickview__item">
-            <div class="quickview__item-total">12&deg;</div>
-            <div class="quickview__item-description">
-              <i class="fas fa-map-marker-alt"></i>
-              <span class="text-light">Beograd</span>
-            </div>
-          </div>
-        </div>
+        <Welcome/>
+        <Quickview/>
       </div>
     </div>
     <div class="main-overview">
-      <div class="overviewCard">
-        <div class="overviewCard-icon overviewCard-icon--document">
-          <i class="fas fa-chart-line"></i>
-        </div>
-        <div class="overviewCard-description">
-          <h3 class="overviewCard-title text-light">Novi
-            <strong>Plan</strong>
-          </h3>
-          <p class="overviewCard-subtitle">plan prodaje u periodu</p>
-        </div>
-      </div>
-      <div class="overviewCard">
-        <div class="overviewCard-icon overviewCard-icon--calendar">
-          <i class="far fa-calendar-check"></i>
-        </div>
-        <div class="overviewCard-description">
-          <h3 class="overviewCard-title text-light">Sledeći
-            <strong>Sastanci</strong>
-          </h3>
-          <p class="overviewCard-subtitle">kalendar timskih sastanaka</p>
-        </div>
-      </div>
-      <!-- <div class="overviewCard">
-        <div class="overviewCard-icon overviewCard-icon--mail">
-          <i class="far fa-envelope"></i>
-        </div>
-        <div class="overviewCard-description">
-          <h3 class="overviewCard-title text-light">Recent
-            <strong>Emails</strong>
-          </h3>
-          <p class="overviewCard-subtitle">+10</p>
-        </div>
-      </div>
-      <div class="overviewCard">
-        <div class="overviewCard-icon overviewCard-icon--photo">
-          <i class="far fa-file-image"></i>
-        </div>
-        <div class="overviewCard-description">
-          <h3 class="overviewCard-title text-light">New
-            <strong>Album</strong>
-          </h3>
-          <p class="overviewCard-subtitle">House Concert</p>
-        </div>
-      </div> -->
+      <OverviewCard @click="$router.push('plans')" text="Novi" textHighlight="Plan" icon="fa-chart-line" subtitle="plan prodaje u periodu" />
+      <OverviewCard text="Sledeći" textHighlight="Sastanci" icon="fa-calendar-check" subtitle="kalendar timskih sastanaka" />
     </div>
     <!-- /.main__overview -->
     <div class="main__cards">
@@ -166,12 +97,12 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>-->
       <div class="card">
         <div class="card__header">
           <div class="card__header-title text-light">
             Poslednji
-            <strong>Izveštaji </strong>
+            <strong>Izveštaji&nbsp;</strong>
             <a href="#" class="card__header-link text-bold">Pregledaj sve</a>
           </div>
           <div class="settings">
@@ -212,8 +143,8 @@
         <div class="card__header">
           <div class="card__header-title text-light">
             Plan
-            <strong>prodaje </strong>
-            <a href="#" class="card__header-link text-bold">Pregledaj sve</a>
+            <strong>prodaje&nbsp;</strong>
+            <a href @click.prevent="$router.push('plans')" class="card__header-link text-bold">Pregledaj sve</a>
           </div>
           <div class="settings">
             <div class="settings__block">
@@ -225,20 +156,38 @@
           </div>
         </div>
         <div id="chartdiv">
-              <apexchart class="plan-chart" width="350" type="radialBar" :options="options" :series="series"></apexchart>
+          <apexchart
+            class="plan-chart"
+            width="350"
+            type="radialBar"
+            :options="options"
+            :series="series"
+          ></apexchart>
         </div>
       </div>
     </div>
     <!-- /.main-cards -->
   </div>
 </template>
-
+<style lang="scss">
+.plan-chart .apexcharts-canvas {
+  margin-left: auto;
+  margin-right: auto;
+}
+ .main-header {
+    &__intro-wrapper {
+      padding: 0 30px;
+    }
+  }
+</style>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-// import BrandHeader from '@/components/BrandHeader.vue';
+import Quickview from '@/components/Dashboard/Quickview.vue';
+import Welcome from '@/components/Dashboard/Welcome.vue';
+import OverviewCard from '@/components/Dashboard/OverviewCard.vue';
 import { ApexOptions } from 'apexcharts';
 @Component({
-  //   components: {BrandHeader},
+  components: { Quickview, Welcome, OverviewCard },
 })
 export default class Dashboard extends Vue {
   private options: ApexOptions = {
@@ -268,9 +217,3 @@ export default class Dashboard extends Vue {
 }
 </script>
 
-<style lang="scss">
-.plan-chart .apexcharts-canvas {
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
