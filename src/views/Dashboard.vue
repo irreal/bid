@@ -225,7 +225,7 @@
           </div>
         </div>
         <div id="chartdiv">
-              <apexchart width="350" type="radialBar" :options="options" :series="series"></apexchart>
+              <apexchart class="plan-chart" width="350" type="radialBar" :options="options" :series="series"></apexchart>
         </div>
       </div>
     </div>
@@ -268,5 +268,9 @@ export default class Dashboard extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+.plan-chart .apexcharts-canvas {
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>
