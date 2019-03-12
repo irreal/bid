@@ -4,7 +4,9 @@
 
     <SideNav/>
 
-    <Dashboard/>
+    <main class="main">
+      <router-view/>
+    </main>
 
     <Footer/>
   </div>
@@ -885,10 +887,10 @@ a {
 </style>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
-import SideNav from '@/components/SideNav.vue';
-import Header from '@/components/Header.vue';
-import Footer from '@/components/Footer.vue';
-import Dashboard from '@/components/Dashboard.vue';
+import SideNav from '@/views/SideNav.vue';
+import Header from '@/views/Header.vue';
+import Footer from '@/views/Footer.vue';
+import Dashboard from '@/views/Dashboard.vue';
 
 @Component({
   components: { SideNav, Header, Footer, Dashboard },

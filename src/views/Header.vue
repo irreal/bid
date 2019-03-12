@@ -1,6 +1,6 @@
 <template>
  <header class="header">
-    <i @click="$store.commit('menuOpen')" class="fas fa-bars header__menu"></i>
+    <i @click="openMenu()" class="fas fa-bars header__menu"></i>
     <div class="header__search">
       <input class="header__input" placeholder="Pretraga..." />
     </div>
@@ -33,6 +33,9 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 //   components: {BrandHeader},
 })
 export default class Header extends Vue {
+  private openMenu() {
+    this.$store.commit('toggleMenu');
+  }
 }
 </script>
 
