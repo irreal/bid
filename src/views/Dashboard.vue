@@ -3,31 +3,31 @@
     <div class="main-header">
       <div class="main-header__intro-wrapper">
         <div class="main-header__welcome">
-          <div class="main-header__welcome-title text-light">Welcome,
+          <div class="main-header__welcome-title text-light">Zdravo,
             <strong>Žarko</strong>
           </div>
-          <div class="main-header__welcome-subtitle text-light">How are you today?</div>
+          <div class="main-header__welcome-subtitle text-light"></div>
         </div>
         <div class="quickview">
           <div class="quickview__item">
-            <div class="quickview__item-total">41</div>
+            <div class="quickview__item-total">10</div>
             <div class="quickview__item-description">
-              <i class="far fa-calendar-alt"></i>
-              <span class="text-light">Events</span>
+              <i class="far fa-file-alt"></i>
+              <span class="text-light">Izveštaja</span>
             </div>
           </div>
           <div class="quickview__item">
-            <div class="quickview__item-total">64</div>
+            <div class="quickview__item-total">0</div>
             <div class="quickview__item-description">
               <i class="far fa-comment"></i>
-              <span class="text-light">Messages</span>
+              <span class="text-light">Poruka</span>
             </div>
           </div>
           <div class="quickview__item">
-            <div class="quickview__item-total">27&deg;</div>
+            <div class="quickview__item-total">12&deg;</div>
             <div class="quickview__item-description">
               <i class="fas fa-map-marker-alt"></i>
-              <span class="text-light">Austin</span>
+              <span class="text-light">Beograd</span>
             </div>
           </div>
         </div>
@@ -36,13 +36,13 @@
     <div class="main-overview">
       <div class="overviewCard">
         <div class="overviewCard-icon overviewCard-icon--document">
-          <i class="far fa-file-alt"></i>
+          <i class="fas fa-chart-line"></i>
         </div>
         <div class="overviewCard-description">
-          <h3 class="overviewCard-title text-light">New
-            <strong>Document</strong>
+          <h3 class="overviewCard-title text-light">Novi
+            <strong>Plan</strong>
           </h3>
-          <p class="overviewCard-subtitle">Europe Trip</p>
+          <p class="overviewCard-subtitle">plan prodaje u periodu</p>
         </div>
       </div>
       <div class="overviewCard">
@@ -50,13 +50,13 @@
           <i class="far fa-calendar-check"></i>
         </div>
         <div class="overviewCard-description">
-          <h3 class="overviewCard-title text-light">Upcoming
-            <strong>Event</strong>
+          <h3 class="overviewCard-title text-light">Sledeći
+            <strong>Sastanci</strong>
           </h3>
-          <p class="overviewCard-subtitle">Chili Cookoff</p>
+          <p class="overviewCard-subtitle">kalendar timskih sastanaka</p>
         </div>
       </div>
-      <div class="overviewCard">
+      <!-- <div class="overviewCard">
         <div class="overviewCard-icon overviewCard-icon--mail">
           <i class="far fa-envelope"></i>
         </div>
@@ -77,11 +77,11 @@
           </h3>
           <p class="overviewCard-subtitle">House Concert</p>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- /.main__overview -->
     <div class="main__cards">
-      <div class="card">
+      <!-- <div class="card">
         <div class="card__header">
           <div class="card__header-title text-light">
             Your
@@ -166,13 +166,13 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="card">
         <div class="card__header">
           <div class="card__header-title text-light">
-            Recent
-            <strong>Documents</strong>
-            <a href="#" class="card__header-link text-bold">View All</a>
+            Poslednji
+            <strong>Izveštaji </strong>
+            <a href="#" class="card__header-link text-bold">Pregledaj sve</a>
           </div>
           <div class="settings">
             <div class="settings__block">
@@ -187,23 +187,23 @@
           <div class="documents">
             <div class="document">
               <div class="document__img"></div>
-              <div class="document__title">tesla-patents</div>
-              <div class="document__date">07/16/2018</div>
+              <div class="document__title">realizacija</div>
+              <div class="document__date">03.03.2019</div>
             </div>
             <div class="document">
               <div class="document__img"></div>
-              <div class="document__title">yearly-budget</div>
-              <div class="document__date">09/04/2018</div>
+              <div class="document__title">budžet</div>
+              <div class="document__date">24.02.2019</div>
             </div>
             <div class="document">
               <div class="document__img"></div>
-              <div class="document__title">top-movies</div>
-              <div class="document__date">10/10/2018</div>
+              <div class="document__title">zalihe</div>
+              <div class="document__date">10.02.2019</div>
             </div>
             <div class="document">
               <div class="document__img"></div>
-              <div class="document__title">trip-itinerary</div>
-              <div class="document__date">11/01/2018</div>
+              <div class="document__title">dospela potraživanja</div>
+              <div class="document__date">03.02.2019</div>
             </div>
           </div>
         </div>
@@ -211,9 +211,9 @@
       <div class="card card--finance">
         <div class="card__header">
           <div class="card__header-title text-light">
-            Monthly
-            <strong>Spending</strong>
-            <a href="#" class="card__header-link text-bold">View All</a>
+            Plan
+            <strong>prodaje </strong>
+            <a href="#" class="card__header-link text-bold">Pregledaj sve</a>
           </div>
           <div class="settings">
             <div class="settings__block">
@@ -224,7 +224,9 @@
             </div>
           </div>
         </div>
-        <div id="chartdiv"></div>
+        <div id="chartdiv">
+              <apexchart width="350" type="radialBar" :options="options" :series="series"></apexchart>
+        </div>
       </div>
     </div>
     <!-- /.main-cards -->
@@ -234,11 +236,36 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 // import BrandHeader from '@/components/BrandHeader.vue';
-
+import { ApexOptions } from 'apexcharts';
 @Component({
   //   components: {BrandHeader},
 })
-export default class Dashboard extends Vue {}
+export default class Dashboard extends Vue {
+  private options: ApexOptions = {
+    plotOptions: {
+      radialBar: {
+        dataLabels: {
+          total: {
+            show: true,
+            label: 'Ukupno:',
+            formatter: () => {
+              return `${Math.round(
+                this.series.reduce((tot, cur) => tot + cur, 0) /
+                  this.series.length,
+              )}%`;
+            },
+          },
+        },
+      },
+    },
+    chart: {
+      id: 'vuechart-example',
+    },
+    labels: ['Godina', 'Kvartal', 'Mesec'],
+  };
+
+  private series: ApexNonAxisChartSeries = [25, 70, 90];
+}
 </script>
 
 <style scoped lang="scss">
