@@ -1,8 +1,8 @@
-import Plan from '@/models/Plan.ts';
-import Period from '@/models/Period.ts';
-import Customer from '@/models/Customer.ts';
-import Item from '@/models/Item.ts';
-import UnitOfMeasure from '@/models/UnitOfMeasure.ts';
+import Plan from '@/models/Plan';
+import Period from '@/models/Period';
+import Customer from '@/models/Customer';
+import Item from '@/models/Item';
+import UnitOfMeasure from '@/models/UnitOfMeasure';
 
 const customers: Customer[] = [
   {
