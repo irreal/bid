@@ -6,6 +6,9 @@ const getters: GetterTree<State, State> = {
     plans(state: State): Plan[] {
       return state.plans;
     },
+    menuOpen(state: State): boolean {
+      return state.menuOpen;
+    },
     // colour(state: State): string {
     // 	return state.color;
     // },

@@ -1,5 +1,5 @@
 <template>
-<aside class="sidenav">
+<aside class="sidenav" :class="{'sidenav--active':menuOpen}">
     <BrandHeader />
     <div class="sidenav__profile">
       <div class="sidenav__profile-avatar"></div>
@@ -197,6 +197,9 @@ import BrandHeader from '@/components/BrandHeader.vue';
   components: {BrandHeader},
 })
 export default class SideNav extends Vue {
+    get menuOpen() {
+        return this.$store.getters.menuOpen;
+    }
 }
 </script>
 

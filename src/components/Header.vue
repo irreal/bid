@@ -1,6 +1,6 @@
 <template>
  <header class="header">
-    <i class="fas fa-bars header__menu"></i>
+    <i @click="$store.commit('menuOpen')" class="fas fa-bars header__menu"></i>
     <div class="header__search">
       <input class="header__input" placeholder="Pretraga..." />
     </div>
