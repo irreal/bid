@@ -1,4 +1,4 @@
-import UnitOfMeasure from './UnitOfMeasure';
+import UnitOfMeasure from '@/Models/UnitOfMeasure.ts';
 
 interface Item {
     id: string;

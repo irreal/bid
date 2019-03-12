@@ -1,5 +1,5 @@
-import Item from './Item';
-import Customer from './Customer';
+import Item from '@/Models/Item.ts';
+import Customer from '@/Models/Customer.ts';
 
 interface PlanItem {
     item: Item;

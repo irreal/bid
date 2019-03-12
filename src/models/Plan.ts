@@ -1,5 +1,5 @@
-import Period from './Period';
-import PlanItem from './planItem';
+import Period from '@/Models/Period.ts';
+import PlanItem from '@/Models/planItem.ts';
 
 interface Plan {
     period: Period;
