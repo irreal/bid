@@ -1,5 +1,5 @@
-import Item from '@/Models/Item';
-import Customer from '@/Models/Customer';
+import Item from '@/models/Item';
+import Customer from '@/models/Customer';
 
 interface PlanItem {
     item: Item;

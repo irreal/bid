@@ -1,6 +1,6 @@
 import { GetterTree } from 'vuex';
 import State from './state';
-import Plan from '@/models/plan';
+import Plan from '@/models/Plan';
 
 const getters: GetterTree<State, State> = {
     plans(state: State): Plan[] {
