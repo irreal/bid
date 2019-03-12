@@ -1,6 +1,6 @@
 <template>
   <div class="plan">
-    <span ref="plan" class="plan-name">{{ name }}</span>
+    <span class="plan-name">{{ name }}</span>
     <span class="plan-progress">{{ progress }}%</span>
     <div class="plan-fill" />
   </div>
@@ -17,21 +17,20 @@
 }
 .plan-fill {
   border-radius: 33px;
-  background: #53cbf1; /* Old browsers */
-  background: -moz-linear-gradient(
-    left,
-    #53cbf1 2%,
-    #05abe0 100%
-  ); /* FF3.6-15 */
-  background: -webkit-linear-gradient(
-    left,
-    #53cbf1 2%,
-    #05abe0 100%
-  ); /* Chrome10-25,Safari5.1-6 */
+  // background: -moz-linear-gradient(
+  //   left,
+  //   #53cbf1 2%,
+  //   #05abe0 100%
+  // ); /* FF3.6-15 */
+  // background: -webkit-linear-gradient(
+  //   left,
+  //   #53cbf1 2%,
+  //   #05abe0 100%
+  // ); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
     to right,
-    #53cbf1 2%,
-    #05abe0 100%
+    var(--fromColor) 2%,
+    var(--toColor) 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   width: var(--progress);
   height: 100%;
@@ -66,12 +65,31 @@ export default {
   props: {
     name: String,
     progress: Number,
-    fromColor: String,
-    toColor: String
+    fromColor: {
+      type: String,
+      default: "#53cbf1"
+    },
+    toColor: {
+      type: String,
+      default: "#05abe0"
+    }
   },
   watch: {
-    progress() {
-      debugger;
+    progress: {
+      immediate: false,
+      handler() {
+        this.setVariables();
+      }
+    }
+  },
+  mounted() {
+    this.setVariables();
+  },
+  methods: {
+    setVariables() {
+      this.$el.style.setProperty("--progress", this.progress + "%");
+      this.$el.style.setProperty("--fromColor", this.fromColor);
+      this.$el.style.setProperty("--toColor", this.toColor);
     }
   }
 };
