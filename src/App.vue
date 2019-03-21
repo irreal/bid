@@ -123,7 +123,6 @@ a {
   }
 
   &__avatar {
-    @include profile-avatar;
     position: relative;
     margin: 0 26px;
     width: 35px;
@@ -796,8 +795,58 @@ import SideNav from "@/views/SideNav.vue";
 import Header from "@/views/Header.vue";
 import Footer from "@/views/Footer.vue";
 
+import { mapGetters, mapActions } from "vuex";
+import netlifyIdentity from "netlify-identity-widget";
+
+netlifyIdentity.init({
+  APIUrl: "https://www.darex.ml/.netlify/identity",
+  logo: true // you can try false and see what happens
+});
+
 export default {
   name: "App",
-  components: { SideNav, Header, Footer }
+  components: { SideNav, Header, Footer },
+  computed: {
+    ...mapGetters({
+      isLoggedIn: "getUserStatus",
+      user: "getUser"
+    }),
+    username() {
+      return this.user ? this.user.username : ", there!";
+    }
+  },
+  data: () => {
+    return {};
+  },
+  methods: {
+    ...mapActions({
+      updateUser: "updateUser"
+    }),
+    triggerNetlifyIdentityAction(action) {
+      if (action == "login" || action == "signup") {
+        netlifyIdentity.open(action);
+        netlifyIdentity.on(action, user => {
+          netlifyIdentity.close();
+          let currentUser = {
+            username: user.user_metadata.full_name,
+            email: user.email,
+            access_token: user.token.access_token,
+            expires_at: user.token.expires_at,
+            refresh_token: user.token.refresh_token,
+            token_type: user.token.token_type
+          };
+          this.updateUser({
+            currentUser: currentUser
+          });
+        });
+      } else if (action == "logout") {
+        this.updateUser({
+          currentUser: null
+        });
+        netlifyIdentity.logout();
+        this.$router.push({ name: "home" });
+      }
+    }
+  }
 };
 </script>

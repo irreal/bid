@@ -5,6 +5,7 @@
       <input class="header__input" placeholder="Pretraga..." />
     </div>
     <div class="header__avatar">
+      <UserAvatar class="user-avatar" />
       <div class="dropdown">
         <ul class="dropdown__list">
           <li class="dropdown__list-item">
@@ -30,7 +31,9 @@
 </template>
 
 <script>
+import UserAvatar from "@/components/UserAvatar.vue";
 export default {
+  components: { UserAvatar },
   name: "Footer",
   methods: {
     openMenu() {
@@ -40,4 +43,12 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  span {
+    font-size: 18px !important;
+  }
+}
+</style>

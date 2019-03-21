@@ -2,8 +2,11 @@
   <aside class="sidenav" :class="{ 'sidenav--active': menuOpen }">
     <BrandHeader />
     <div class="sidenav__profile">
-      <div class="sidenav__profile-avatar"></div>
-      <div class="sidenav__profile-title text-light">Žarko Jekić</div>
+      <!-- <div class="sidenav__profile-avatar"></div> -->
+      <UserAvatar class="user-avatar ml-2 mr-2" />
+      <div class="sidenav__profile-title text-light" v-if="isLoggedIn">
+        {{ user.username }}
+      </div>
     </div>
     <div class="row row--align-v-center row--align-h-center">
       <ul class="navList">
@@ -88,15 +91,29 @@
 
 <script>
 import BrandHeader from "@/components/BrandHeader.vue";
+import UserAvatar from "@/components/UserAvatar.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "SideNav",
-  components: { BrandHeader },
+  components: { BrandHeader, UserAvatar },
   computed: {
     menuOpen() {
       return this.$store.getters.menuOpen;
+    },
+    ...mapGetters({
+      isLoggedIn: "getUserStatus",
+      user: "getUser"
+    }),
+    username() {
+      return this.user ? this.user.username : ", there!";
     }
   }
 };
 </script>
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.user-avatar {
+  width: 60px;
+  height: 60px;
+}
+</style>
