@@ -15,7 +15,9 @@
   "dependencies": {
     "@storybook/addon-knobs": "^5.0.3",
     "apexcharts": "^3.6.2",
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
+    "dotenv": "^7.0.0",
     "netlify-identity-widget": "^1.5.2",
     "node-sass": "^4.11.0",
     "register-service-worker": "^1.6.2",
