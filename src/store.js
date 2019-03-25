@@ -7,18 +7,11 @@ export default new Vuex.Store({
   state: {
     plans: [],
     menuOpen: false,
-    user: window.localStorage.getItem("user")
+    user: null
   },
   mutations: {
     setUser: (state, currentUser) => {
-      if (!currentUser) {
-        state.user = null;
-        window.localStorage.removeItem("user");
-        return;
-      }
-      let theUser = JSON.stringify(currentUser);
-      state.user = theUser;
-      window.localStorage.setItem("user", theUser);
+      state.user = currentUser;
     },
     toggleMenu(state, value) {
       state.menuOpen = value;
@@ -34,7 +27,7 @@ export default new Vuex.Store({
   },
   getters: {
     getUserStatus: state => !!state.user,
-    getUser: state => JSON.parse(state.user),
+    getUser: state => state.user,
     plans(state) {
       return state.plans;
     },

@@ -835,7 +835,6 @@ export default {
       updateUser: "updateUser"
     }),
     triggerNetlifyIdentityAction(action) {
-      console.log("triggering... ", action);
       if (action == "login" || action == "signup") {
         netlifyIdentity.open(action);
         netlifyIdentity.on(action, user => {

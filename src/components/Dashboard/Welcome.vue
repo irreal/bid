@@ -14,7 +14,9 @@ export default {
   computed: {
     ...mapGetters({ user: "getUser" }),
     username() {
-      return this.user ? this.user.username : "neulogovani korisnik";
+      return this.user
+        ? this.user.user_metadata.full_name
+        : "neulogovani korisnik";
     }
   }
 };
