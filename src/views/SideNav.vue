@@ -3,7 +3,7 @@
     <BrandHeader />
     <div class="sidenav__profile">
       <!-- <div class="sidenav__profile-avatar"></div> -->
-      <UserAvatar class="user-avatar ml-2 mr-2" />
+      <user-avatar class="user-avatar ml-2 mr-2" />
       <div class="sidenav__profile-title text-light" v-if="isLoggedIn">
         {{ user.username }}
       </div>

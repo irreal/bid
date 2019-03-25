@@ -13,10 +13,8 @@ Vue.use(Vuex);
 storiesOf("UserAvatar", module)
   .addDecorator(withKnobs)
   .add("with user", () => {
-    // let value = text(label, defaultValue, groupId);
-    // forceReRender();
     const state = {
-      user: { username: defaultValue }
+      user: { user_metadata: { full_name: defaultValue } }
     };
     const getters = {
       getUser: state => {
@@ -47,19 +45,19 @@ storiesOf("UserAvatar", module)
       },
       watch: {
         name() {
-          this.$store.state.user.username = this.name;
+          this.$store.state.user.metadata = { full_name: this.name };
         }
       },
       components: { UserAvatar },
       store,
       template:
-        "<div><UserAvatar :style=\"'width:' + width + 'px; height:' + height + 'px'\" /></div>"
+        "<div><user-avatar :style=\"'width:' + width + 'px; height:' + height + 'px'\" /></div>"
     };
   })
 
   .add("without user", () => {
     const getters = {
-      getUser: () => ({ username: "" }),
+      getUser: () => ({ user_metadata: { full_name: "" } }),
       getUserStatus: () => false
     };
 
@@ -70,12 +68,12 @@ storiesOf("UserAvatar", module)
     return {
       components: { UserAvatar },
       store,
-      template: '<div> <UserAvatar style="width:100px; height:100px" /> </div>'
+      template: '<div> <user-avatar style="width:100px; height:100px" /> </div>'
     };
   })
   .add("with user's name only", () => {
     const getters = {
-      getUser: () => ({ username: "Miloš" }),
+      getUser: () => ({ user_metadata: { full_name: "Miloš" } }),
       getUserStatus: () => true
     };
 

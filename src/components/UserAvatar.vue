@@ -17,7 +17,7 @@ export default {
   computed: {
     ...mapGetters({ user: "getUser" }),
     username() {
-      return this.user ? this.user.username : "";
+      return this.user ? this.user.user_metadata.full_name : "";
     },
     userInitials() {
       var initials = this.username.match(/\b\w/g) || [];

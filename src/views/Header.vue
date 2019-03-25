@@ -4,9 +4,9 @@
     <div class="header__search">
       <input class="header__input" placeholder="Pretraga..." />
     </div>
-    <div class="header__avatar">
-      <UserAvatar class="user-avatar" />
-      <div class="dropdown">
+    <div class="header__avatar" @click="dropdownActive = !dropdownActive">
+      <user-avatar class="user-avatar" />
+      <div class="dropdown" :class="{ 'dropdown--active': dropdownActive }">
         <ul class="dropdown__list">
           <li class="dropdown__list-item">
             <span class="dropdown__icon"><i class="far fa-user"></i></span>
@@ -18,7 +18,7 @@
             ></span>
             <span class="dropdown__title">my account</span>
           </li>
-          <li class="dropdown__list-item">
+          <li class="dropdown__list-item" @click="$emit('logout')">
             <span class="dropdown__icon"
               ><i class="fas fa-sign-out-alt"></i
             ></span>
@@ -35,6 +35,11 @@ import UserAvatar from "@/components/UserAvatar.vue";
 export default {
   components: { UserAvatar },
   name: "Footer",
+  data() {
+    return {
+      dropdownActive: false
+    };
+  },
   methods: {
     openMenu() {
       this.$store.commit("toggleMenu", true);
