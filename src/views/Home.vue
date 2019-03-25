@@ -1,18 +1,22 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="d-flex w-100 h-100 justify-content-center align-items-center">
+    <div class="d-flex flex-column justify-content-between h-25 w-25">
+      <button class="btn-primary" href @click.prevent="$emit('login')">
+        Uloguj se
+      </button>
+      <button class="btn-success" href @click.prevent="$emit('signup')">
+        Registruj se
+      </button>
+      <button class="btn-danger" href @click.prevent="$emit('logout')">
+        Izloguj se
+      </button>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
-  name: "home",
-  components: {
-    HelloWorld
-  }
+  name: "home"
 };
 </script>
+<style scoped></style>

@@ -1,11 +1,15 @@
 <template>
-  <div class="app grid">
-    <Header />
+  <div class="app grid" :class="{ 'logged-in': isLoggedIn }">
+    <Header @logout="triggerNetlifyIdentityAction('logout')" />
 
-    <SideNav />
+    <side-nav v-if="isLoggedIn" />
 
     <main class="main">
-      <router-view />
+      <router-view
+        @login="triggerNetlifyIdentityAction('login')"
+        @logout="triggerNetlifyIdentityAction('logout')"
+        @signup="triggerNetlifyIdentityAction('signup')"
+      />
     </main>
 
     <Footer />
@@ -20,7 +24,7 @@ $height-footer: 50px;
 $width-sidenav: 240px;
 
 @mixin profile-avatar {
-  background-image: url("https://scontent.fbeg6-1.fna.fbcdn.net/v/t1.0-9/47460492_10218064629268692_8200567270854885376_n.jpg?_nc_cat=107&_nc_ht=scontent.fbeg6-1.fna&oh=71b74f164577b6fee79261fe0e426c52&oe=5D083A4A");
+  // background-image: url("https://scontent.fbeg6-1.fna.fbcdn.net/v/t1.0-9/47460492_10218064629268692_8200567270854885376_n.jpg?_nc_cat=107&_nc_ht=scontent.fbeg6-1.fna&oh=71b74f164577b6fee79261fe0e426c52&oe=5D083A4A");
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
@@ -145,12 +149,12 @@ a {
 }
 
 .dropdown {
-  position: absolute;
+  position: absolute !important;
   top: 54px;
   right: -16px;
   width: 220px;
   height: auto;
-  z-index: 1;
+  z-index: 50;
   background-color: #fff;
   border-radius: 4px;
   visibility: hidden;
@@ -737,13 +741,19 @@ a {
   // Break out to sidenav grid layout on medium + screens
   .grid {
     display: grid;
-    grid-template-columns: $width-sidenav calc(100% - 240px); // Charts responsiveness won't work with fr units
-    grid-template-rows: $height-header 1fr $height-footer;
-    grid-template-areas:
-      "sidenav header"
-      "sidenav main"
-      "sidenav footer";
     height: 100vh;
+    grid-template-rows: 1fr $height-footer;
+    grid-template-areas:
+      "main"
+      "footer";
+    &.logged-in {
+      grid-template-rows: $height-header 1fr $height-footer;
+      grid-template-columns: $width-sidenav calc(100% - 240px); // Charts responsiveness won't work with fr units
+      grid-template-areas:
+        "sidenav header"
+        "sidenav main"
+        "sidenav footer";
+    }
   }
 
   .sidenav {
@@ -816,7 +826,9 @@ export default {
     }
   },
   data: () => {
-    return {};
+    return {
+      nwid: netlifyIdentity
+    };
   },
   methods: {
     ...mapActions({
@@ -827,24 +839,19 @@ export default {
         netlifyIdentity.open(action);
         netlifyIdentity.on(action, user => {
           netlifyIdentity.close();
-          let currentUser = {
-            username: user.user_metadata.full_name,
-            email: user.email,
-            access_token: user.token.access_token,
-            expires_at: user.token.expires_at,
-            refresh_token: user.token.refresh_token,
-            token_type: user.token.token_type
-          };
           this.updateUser({
-            currentUser: currentUser
+            currentUser: user
           });
+          if (user) {
+            this.$router.push({ name: "home" });
+          }
         });
       } else if (action == "logout") {
         this.updateUser({
           currentUser: null
         });
         netlifyIdentity.logout();
-        this.$router.push({ name: "home" });
+        this.$router.push({ name: "login" });
       }
     }
   }

@@ -3,9 +3,9 @@
     <BrandHeader />
     <div class="sidenav__profile">
       <!-- <div class="sidenav__profile-avatar"></div> -->
-      <UserAvatar class="user-avatar ml-2 mr-2" />
+      <user-avatar class="user-avatar ml-2 mr-2" />
       <div class="sidenav__profile-title text-light" v-if="isLoggedIn">
-        {{ user.username }}
+        {{ user.user_metadata.full_name }}
       </div>
     </div>
     <div class="row row--align-v-center row--align-h-center">
