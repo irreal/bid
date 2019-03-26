@@ -1,1 +1,5 @@
 GET http://localhost:8080/.netlify/functions/weather
+
+###
+
+GET http://localhost:8080/.netlify/functions/restplans
