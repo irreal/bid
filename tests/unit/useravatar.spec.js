@@ -13,7 +13,7 @@ describe("UserAvatar.vue", () => {
 
   it("renders initials", () => {
     getters = {
-      getUser: () => ({ username: "Miloš Spasoejvić" }),
+      getUser: () => ({ user_metadata: { full_name: "Miloš Spasoejvić" } }),
       getUserStatus: () => true
     };
 
@@ -31,7 +31,7 @@ describe("UserAvatar.vue", () => {
 
   it("uppercases initials", () => {
     getters = {
-      getUser: () => ({ username: "miloš spasoejvić" }),
+      getUser: () => ({ user_metadata: { full_name: "miloš spasoejvić" } }),
       getUserStatus: () => true
     };
 
@@ -66,7 +66,7 @@ describe("UserAvatar.vue", () => {
 
   it("handles single name", () => {
     getters = {
-      getUser: () => ({ username: "milos" }),
+      getUser: () => ({ user_metadata: { full_name: "milos" } }),
       getUserStatus: () => true
     };
 
