@@ -1,19 +1,30 @@
+const mongoose = require("mongoose");
+const planSchema = new mongoose.Schema({
+  title: String,
+  date_added: Date,
+  percent_complete: Number
+});
+var Plan = mongoose.model("plans", planSchema);
 export async function handler(event, context, callback) {
   try {
-    // console.log(event);
-    const MongoClient = require("mongodb").MongoClient;
     const uri = process.env.MONGO_CONNECTION;
-    const dbName = process.env.MONGO_DB;
-    console.log(uri);
-    const client = await MongoClient.connect(uri, { useNewUrlParser: true });
+    await mongoose.connect(uri, { useNewUrlParser: true });
 
-    const collection = client.db(dbName).collection("plans");
+    var mesecni = new Plan({
+      title: "Mesečni",
+      percent_complete: 12.2,
+      date_added: new Date()
+    });
+    await mesecni.save();
 
-    const results = await collection.find({}).toArray();
+    const results = await Plan.find();
     console.log(results);
-    callback(null, { statusCode: 200, body: JSON.stringify(results) });
+    callback(null, {
+      statusCode: 200,
+      body: JSON.stringify(results)
+    });
   } catch (err) {
-    console.log("uhvatio error ", err);
+    console.log("error accessing plans ", err);
     callback(err);
   }
 }
