@@ -52,15 +52,12 @@ export async function handler(event, context, callback) {
         ]
       };
     }
-    const results = await Plan.find(filter);
-    console.log(results);
-    console.log("pre cb-a");
+    const results = await Plan.find(filter, '_id title percent_complete');
     await mongoose.connection.close();
     callback(null, {
       statusCode: 200,
       body: JSON.stringify(results)
     });
-    console.log("posle cb-a");
   } catch (err) {
     await mongoose.connection.close();
     console.log("error accessing plans ", err);
