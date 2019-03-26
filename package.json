@@ -51,7 +51,7 @@
     "fibers": "^3.1.1",
     "sass": "^1.17.2",
     "sass-loader": "^7.1.0",
-    "vue-cli-plugin-netlify-lambda": "^0.1.1",
+    "vue-cli-plugin-netlify-lambda": "git+https://git@github.com/irreal/vue-cli-plugin-netlify-lambda.git",
     "vue-template-compiler": "^2.5.21"
   }
 }
