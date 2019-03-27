@@ -47,7 +47,7 @@ export default {
       .then(resp => {
         this.weather.temperature = Math.round(resp.data.main.temp) + "°";
         this.weather.location = resp.data.name;
-        this.weather.icon = `http://openweathermap.org/img/w/${
+        this.weather.icon = `https://openweathermap.org/img/w/${
           resp.data.weather[0].icon
         }.png`;
       })
