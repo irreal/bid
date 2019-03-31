@@ -1,6 +1,9 @@
 <template>
   <div class="app grid" :class="{ 'logged-in': isLoggedIn }">
-    <Header @logout="triggerNetlifyIdentityAction('logout')" />
+    <Header
+      v-if="isLoggedIn"
+      @logout="triggerNetlifyIdentityAction('logout')"
+    />
 
     <side-nav v-if="isLoggedIn" />
 
@@ -74,9 +77,8 @@ a {
   position: relative;
   display: grid;
   grid-template-columns: 100%; // Charts responsiveness won't work with fr units
-  grid-template-rows: $height-header 1fr $height-footer;
+  grid-template-rows: 1fr $height-footer;
   grid-template-areas:
-    "header"
     "main"
     "footer";
   height: 100vh;
@@ -85,6 +87,13 @@ a {
   &--noscroll {
     overflow-y: hidden;
   }
+}
+.grid.logged-in {
+  grid-template-rows: $height-header 1fr $height-footer;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
 }
 
 .header {
