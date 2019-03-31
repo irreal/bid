@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Dashboard from "./views/Dashboard.vue";
-import Home from "./views/Home.vue";
+import Login from "./views/Login.vue";
 import netlifyWidget from "netlify-identity-widget";
 
 Vue.use(Router);
@@ -17,8 +17,7 @@ const loginGuard = async (to, from, next) => {
 export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
-  routes: [
-    {
+  routes: [{
       path: "/",
       name: "home",
       component: Dashboard,
@@ -27,7 +26,7 @@ export default new Router({
     {
       path: "/login",
       name: "login",
-      component: Home
+      component: Login
     },
     {
       path: "/plans",

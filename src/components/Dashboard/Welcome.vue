@@ -1,11 +1,9 @@
 <template>
-  <div class="main-header__welcome">
-    <div class="main-header__welcome-title text-light">
-      Zdravo,
-      <strong>{{ username }}</strong>
-    </div>
-    <div class="main-header__welcome-subtitle text-light"></div>
-  </div>
+  <v-layout align-end py-3>
+    <span class="headline"
+      >Zdravo, <strong>{{ username }}</strong></span
+    >
+  </v-layout>
 </template>
 <script>
 import { mapGetters } from "vuex";
