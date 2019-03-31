@@ -1,6 +1,13 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" fixed app>
+    <v-navigation-drawer
+      dark
+      v-if="isLoggedIn"
+      v-model="drawer"
+      class="blue-grey darken-2"
+      fixed
+      app
+    >
       <v-list dense>
         <v-list-tile @click="noop()">
           <v-list-tile-action>
@@ -20,49 +27,21 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar color="indigo" dark fixed app>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    <v-toolbar color="primary" class="accent--text" fixed app dark>
+      <v-toolbar-side-icon v-if="isLoggedIn" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Darex BID</v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height>
-        <v-fade-transition mode="out-in">
-          <router-view></router-view>
-        </v-fade-transition>
-        <!-- <v-layout justify-center align-center>
-          <v-flex text-xs-center>
-            <v-tooltip left>
-              <template v-slot:activator="{ on }">
-                <v-btn :href="source" icon large target="_blank" v-on="on">
-                  <v-icon large>code</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn
-                  icon
-                  large
-                  href="https://codepen.io/johnjleider/pen/rJdVMq"
-                  target="_blank"
-                  v-on="on"
-                >
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
-          </v-flex>
-        </v-layout>-->
-      </v-container>
+      <v-fade-transition mode="out-in">
+        <router-view></router-view>
+      </v-fade-transition>
     </v-content>
-    <v-footer color="indigo" app>
+    <v-footer v-if="isLoggedIn" color="primary" app>
       <span class="white--text">&copy; 2017</span>
     </v-footer>
   </v-app>
 </template>
-
+<style scoped lang="scss"></style>
 <script>
 import { mapGetters, mapActions } from "vuex";
 import netlifyIdentity from "netlify-identity-widget";
