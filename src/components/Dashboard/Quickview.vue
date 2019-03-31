@@ -1,32 +1,30 @@
 <template>
-  <div class="quickview">
-    <div class="quickview__item">
-      <div class="quickview__item-total">{{ weather.location }}</div>
-      <div class="quickview__item-description">
-        <i class="fas fa-map-marker-alt"></i>
+  <v-layout align-end justify-end py-0 class="headline">
+    <v-card class="pa-3 elevation-0" color="transparent" dark height="150px">
+      <v-card-title>
+        {{ weather.location }}
+      </v-card-title>
+      <v-card-title>
         <span class="text-light">Lokacija</span>
-      </div>
-    </div>
-    <div class="quickview__item">
-      <div class="quickview__item-total">{{ weather.temperature }}</div>
-      <div class="quickview__item-description">
-        <i class="fas fa-thermometer-three-quarters"></i>
+      </v-card-title>
+    </v-card>
+    <v-card class="pa-3 elevation-0" color="transparent" dark height="150px">
+      <v-card-title>
+        <span>{{ weather.temperature }}</span>
+      </v-card-title>
+      <v-card-title>
         <span class="text-light">Temperatura</span>
-      </div>
-    </div>
-    <div class="quickview__item">
-      <div class="quickview__item-total">
-        <div v-if="weather.icon" class="weather-icon">
-          <img :src="weather.icon" />
-        </div>
-        <i v-else class="far fa-question-circle"></i>
-      </div>
-      <div class="quickview__item-description height-fix">
-        <i class="fas fa-cloud"></i>
+      </v-card-title>
+    </v-card>
+    <v-card class="pa-3 elevation-0" color="transparent" dark height="150px">
+      <v-card-title class="py-0 pt-1 mb-2">
+        <img :src="weather.icon" />
+      </v-card-title>
+      <v-card-title>
         <span class="text-light">Vreme</span>
-      </div>
-    </div>
-  </div>
+      </v-card-title>
+    </v-card>
+  </v-layout>
 </template>
 <script>
 import axios from "axios";
@@ -58,11 +56,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.weather-icon img {
-  height: 48px;
-}
-.height-fix {
-  position: relative;
-  top: -5px;
+.fixed-height {
+  height: 64px;
 }
 </style>

@@ -8,27 +8,51 @@
       fixed
       app
     >
+      <v-toolbar flat class="transparent">
+        <v-list class="pa-0">
+          <v-list-tile avatar>
+            <v-list-tile-avatar color="accent">
+              <user-avatar class="white--text"></user-avatar>
+            </v-list-tile-avatar>
+
+            <v-list-tile-content>
+              <v-list-tile-title>{{ username }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-toolbar>
       <v-list dense>
-        <v-list-tile @click="noop()">
+        <v-list-tile @click="$router.push('home')">
           <v-list-tile-action>
-            <v-icon>home</v-icon>
+            <v-icon>dashboard</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Home</v-list-tile-title>
+            <v-list-tile-title>Dashboard</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="noop()">
+        <v-list-tile @click="$router.push('plans')">
           <v-list-tile-action>
-            <v-icon>contact_mail</v-icon>
+            <v-icon>calendar_today</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Contact</v-list-tile-title>
+            <v-list-tile-title>Planovi Prodaje</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="triggerNetlifyIdentityAction('logout')">
+          <v-list-tile-action>
+            <v-icon>logout</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Izloguj se</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="primary" class="accent--text" fixed app dark>
-      <v-toolbar-side-icon v-if="isLoggedIn" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon
+        v-if="isLoggedIn"
+        @click.stop="drawer = !drawer"
+      ></v-toolbar-side-icon>
       <v-toolbar-title>Darex BID</v-toolbar-title>
     </v-toolbar>
     <v-content>
@@ -46,6 +70,7 @@
 import { mapGetters, mapActions } from "vuex";
 import netlifyIdentity from "netlify-identity-widget";
 import { EventBus } from "./event-bus.js";
+import UserAvatar from "@/components/UserAvatar.vue";
 
 netlifyIdentity.init({
   APIUrl: "https://www.darex.ml/.netlify/identity",
@@ -54,6 +79,9 @@ netlifyIdentity.init({
 
 export default {
   name: "App",
+  components: {
+    UserAvatar
+  },
   props: {
     source: String
   },
@@ -63,7 +91,9 @@ export default {
       user: "getUser"
     }),
     username() {
-      return this.user ? this.user.username : ", there!";
+      return this.user
+        ? this.user.user_metadata.full_name
+        : "neulogovani korisnik";
     }
   },
   data: () => {

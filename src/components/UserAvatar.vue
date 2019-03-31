@@ -1,19 +1,12 @@
 <template>
-  <div class="user-avatar">
-    <span>{{ userInitials }}</span>
-  </div>
+  <span>{{ userInitials }}</span>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 
 export default {
-  name: "BrandHeader",
-  methods: {
-    toggleMenu() {
-      this.$store.commit("toggleMenu", false);
-    }
-  },
+  name: "UserAvatar",
   computed: {
     ...mapGetters({ user: "getUser" }),
     username() {
@@ -29,17 +22,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-.user-avatar {
-  background-color: orange;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  span {
-    font-size: 32px;
-    color: white;
-  }
-}
-</style>
