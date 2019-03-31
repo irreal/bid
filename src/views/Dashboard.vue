@@ -5,15 +5,15 @@
         height="180"
         src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1609106/lake-shadow-water.jpg"
       >
-        <v-layout>
+        <v-layout wrap>
           <Welcome />
-          <Quickview />
+          <Quickview class="hidden-sm-and-down" />
         </v-layout>
       </v-parallax>
     </div>
     <div class="main-overview">
-      <v-layout justify-space-around>
-        <OverviewCard color="accent" full-width="true">
+      <v-layout justify-space-around wrap>
+        <OverviewCard color="accent" full-width>
           <template v-slot:header>
             <apexchart
               class="plan-chart"
