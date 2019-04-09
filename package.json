@@ -10,7 +10,8 @@
     "storybook": "start-storybook -p 6006",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
-    "test:unit:watch": "vue-cli-service test:unit --watch"
+    "test:unit:watch": "vue-cli-service test:unit --watch",
+    "test:unit:watchAll": "vue-cli-service test:unit --watchAll"
   },
   "dependencies": {
     "@storybook/addon-knobs": "^5.0.3",
@@ -36,11 +37,9 @@
     "@storybook/addons": "^5.0.3",
     "@storybook/vue": "^5.0.3",
     "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-e2e-cypress": "^3.5.0",
     "@vue/cli-plugin-eslint": "^3.5.0",
     "@vue/cli-plugin-pwa": "^3.5.0",
     "@vue/cli-plugin-unit-jest": "^3.5.3",
-    "@vue/cli-plugin-unit-mocha": "^3.5.0",
     "@vue/cli-service": "^3.5.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/test-utils": "1.0.0-beta.29",
