@@ -18,8 +18,8 @@ exports[`Login Page renders the component 1`] = `
         <div class="text-xs-center">
           <h2 class="headline">Trenutno niste ulogovani</h2>
           <div>
-            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button">Uloguj se</v-btn-stub> <span>ili</span>
-            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button">Kreiraj nalog</v-btn-stub>
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-login">Uloguj se</v-btn-stub> <span>ili</span>
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-signup">Kreiraj nalog</v-btn-stub>
           </div>
         </div>
       </v-flex-stub>

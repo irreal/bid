@@ -35,11 +35,19 @@
               >
             </v-layout>
             <div v-else>
-              <v-btn outline color="accent" @click="emitGlobal('login')"
+              <v-btn
+                id="btn-login"
+                outline
+                color="accent"
+                @click="emitGlobal('login')"
                 >Uloguj se</v-btn
               >
               <span>ili</span>
-              <v-btn outline color="accent" @click="emitGlobal('signup')"
+              <v-btn
+                id="btn-signup"
+                outline
+                color="accent"
+                @click="emitGlobal('signup')"
                 >Kreiraj nalog</v-btn
               >
             </div>
