@@ -26,11 +26,19 @@
               column
               fill-height
             >
-              <v-btn outline color="accent" @click="$router.push('home')"
+              <v-btn
+                id="btn-home"
+                outline
+                color="accent"
+                @click="$router.push('home')"
                 >Dashboard</v-btn
               >
               <span>ili</span>
-              <v-btn outline color="accent" @click="emitGlobal('logout')"
+              <v-btn
+                id="btn-logout"
+                outline
+                color="accent"
+                @click="emitGlobal('logout')"
                 >Izloguj se</v-btn
               >
             </v-layout>
