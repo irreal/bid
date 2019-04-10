@@ -9,9 +9,9 @@
     "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit",
-    "test:unit:watch": "vue-cli-service test:unit --watch",
-    "test:unit:watchAll": "vue-cli-service test:unit --watchAll"
+    "test:unit": "vue-cli-service test:unit --no-cache",
+    "test:unit:watch": "vue-cli-service test:unit --watch --no-cache",
+    "test:unit:watchAll": "vue-cli-service test:unit --watchAll --no-cache"
   },
   "dependencies": {
     "@storybook/addon-knobs": "^5.0.3",
