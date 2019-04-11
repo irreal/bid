@@ -9,9 +9,7 @@ export default {
     }
   },
   getters: {
-    all(state) {
-      return state.items;
-    }
+    all: state => state.items
   },
   actions: {
     load: ({ commit }) => {

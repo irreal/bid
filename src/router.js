@@ -35,6 +35,12 @@ export default new Router({
       beforeEnter: loginGuard
     },
     {
+      path: "/plan-detail/:planId",
+      name: "plan-detail",
+      component: () => import("./views/Dashboard.vue"),
+      beforeEnter: loginGuard
+    },
+    {
       path: "*",
       name: "default",
       redirect: "/"
