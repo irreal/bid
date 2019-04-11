@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Page renders the component 1`] = `
+<div>
+  <section>
+    <v-parallax-stub height="500" alt="" src="">
+      <v-layout-stub tag="div" column="" align-center="" justify-center="" class="orange--text"><img src="../assets/logo.svg" height="200" class="elevation-24">
+        <h1 class="mb-2 display-1 text-xs-center">Darex BID</h1>
+        <div class="subheading mb-3 text-xs-center">
+          Business Insight Dashboard
+        </div>
+      </v-layout-stub>
+    </v-parallax-stub>
+  </section>
+  <section>
+    <v-layout-stub tag="div" column="" wrap="" align-center="" class="my-5">
+      <v-flex-stub tag="div" xs12="" sm4="" class="my-3">
+        <div class="text-xs-center">
+          <h2 class="headline">Trenutno niste ulogovani</h2>
+          <div>
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-login">Uloguj se</v-btn-stub> <span>ili</span>
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-signup">Kreiraj nalog</v-btn-stub>
+          </div>
+        </div>
+      </v-flex-stub>
+      <v-flex-stub tag="div" xs12="">
+        <v-container-stub tag="div" grid-list-xl="">
+          <v-layout-stub tag="div" row="" wrap="" align-start="">
+            <v-flex-stub tag="div" xs12="" md4="">
+              <v-card-stub tag="div" class="elevation-0 transparent">
+                <v-card-text-stub class="text-xs-center">
+                  <v-icon-stub xlarge="" color="accent" x-large="">assignment</v-icon-stub>
+                </v-card-text-stub>
+                <v-card-title-stub primarytitle="true" class="layout justify-center">
+                  <div class="headline text-xs-center">Izveštaji</div>
+                </v-card-title-stub>
+                <v-card-text-stub>
+                  Detaljni izveštaji o poslovanju, analiza trendova, brzi
+                  pregled stanja.
+                </v-card-text-stub>
+              </v-card-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="" md4="">
+              <v-card-stub tag="div" class="elevation-0 transparent">
+                <v-card-text-stub class="text-xs-center">
+                  <v-icon-stub xlarge="" color="accent" x-large="">flash_on</v-icon-stub>
+                </v-card-text-stub>
+                <v-card-title-stub primarytitle="true" class="layout justify-center">
+                  <div class="headline">Brzina</div>
+                </v-card-title-stub>
+                <v-card-text-stub>
+                  Zahvaljujući najmodernijim web tehnologijama i globalno
+                  raspoređenom hostingu, BID je veoma brza aplikacija koja vam
+                  štedi vreme i omogućava da se fokusirate na ono što vas
+                  zanima, umesto da čekate učitavanje ekrana.
+                </v-card-text-stub>
+              </v-card-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="" md4="">
+              <v-card-stub tag="div" class="elevation-0 transparent">
+                <v-card-text-stub class="text-xs-center">
+                  <v-icon-stub xlarge="" color="accent" x-large="">security</v-icon-stub>
+                </v-card-text-stub>
+                <v-card-title-stub primarytitle="true" class="layout justify-center">
+                  <div class="headline text-xs-center">Bezbednost</div>
+                </v-card-title-stub>
+                <v-card-text-stub>
+                  BID koristi autentifikacione metode koje su standard u
+                  industriji, zajedno sa end-to-end enkripcijom podataka. Vaši
+                  podaci su bezbedni.
+                </v-card-text-stub>
+              </v-card-stub>
+            </v-flex-stub>
+          </v-layout-stub>
+        </v-container-stub>
+      </v-flex-stub>
+    </v-layout-stub>
+  </section>
+  <section>
+    <v-parallax-stub height="500" alt="" src="">
+      <v-card-stub tag="div" color="primary">
+        <v-layout-stub tag="div" column="" align-center="" justify-center="" class="white--text">
+          <h1 class="mb-2 display-1 text-xs-center">Potrebna je pomoć?</h1>
+          <div class="subheading mb-3 text-xs-center">
+            Obratite se emailom na:
+            <a href="mailto:it@darex.rs" class="orange--text lighten-2">it@darex.rs</a></div>
+        </v-layout-stub>
+      </v-card-stub>
+    </v-parallax-stub>
+  </section>
+</div>
+`;
+
+exports[`Login Page renders the component with a logged in user 1`] = `
+<div>
+  <section>
+    <v-parallax-stub height="500" alt="" src="">
+      <v-layout-stub tag="div" column="" align-center="" justify-center="" class="orange--text"><img src="../assets/logo.svg" height="200" class="elevation-24">
+        <h1 class="mb-2 display-1 text-xs-center">Darex BID</h1>
+        <div class="subheading mb-3 text-xs-center">
+          Business Insight Dashboard
+        </div>
+      </v-layout-stub>
+    </v-parallax-stub>
+  </section>
+  <section>
+    <v-layout-stub tag="div" column="" wrap="" align-center="" class="my-5">
+      <v-flex-stub tag="div" xs12="" sm4="" class="my-3">
+        <div class="text-xs-center">
+          <h2 class="headline">
+            Ulogovani korisnik: Miloš Spasojević
+          </h2>
+          <v-layout-stub tag="div" align-center="" justify-center="" column="" fill-height="">
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-home">Dashboard</v-btn-stub> <span>ili</span>
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-logout">Izloguj se</v-btn-stub>
+          </v-layout-stub>
+        </div>
+      </v-flex-stub>
+      <v-flex-stub tag="div" xs12="">
+        <v-container-stub tag="div" grid-list-xl="">
+          <v-layout-stub tag="div" row="" wrap="" align-start="">
+            <v-flex-stub tag="div" xs12="" md4="">
+              <v-card-stub tag="div" class="elevation-0 transparent">
+                <v-card-text-stub class="text-xs-center">
+                  <v-icon-stub xlarge="" color="accent" x-large="">assignment</v-icon-stub>
+                </v-card-text-stub>
+                <v-card-title-stub primarytitle="true" class="layout justify-center">
+                  <div class="headline text-xs-center">Izveštaji</div>
+                </v-card-title-stub>
+                <v-card-text-stub>
+                  Detaljni izveštaji o poslovanju, analiza trendova, brzi
+                  pregled stanja.
+                </v-card-text-stub>
+              </v-card-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="" md4="">
+              <v-card-stub tag="div" class="elevation-0 transparent">
+                <v-card-text-stub class="text-xs-center">
+                  <v-icon-stub xlarge="" color="accent" x-large="">flash_on</v-icon-stub>
+                </v-card-text-stub>
+                <v-card-title-stub primarytitle="true" class="layout justify-center">
+                  <div class="headline">Brzina</div>
+                </v-card-title-stub>
+                <v-card-text-stub>
+                  Zahvaljujući najmodernijim web tehnologijama i globalno
+                  raspoređenom hostingu, BID je veoma brza aplikacija koja vam
+                  štedi vreme i omogućava da se fokusirate na ono što vas
+                  zanima, umesto da čekate učitavanje ekrana.
+                </v-card-text-stub>
+              </v-card-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="" md4="">
+              <v-card-stub tag="div" class="elevation-0 transparent">
+                <v-card-text-stub class="text-xs-center">
+                  <v-icon-stub xlarge="" color="accent" x-large="">security</v-icon-stub>
+                </v-card-text-stub>
+                <v-card-title-stub primarytitle="true" class="layout justify-center">
+                  <div class="headline text-xs-center">Bezbednost</div>
+                </v-card-title-stub>
+                <v-card-text-stub>
+                  BID koristi autentifikacione metode koje su standard u
+                  industriji, zajedno sa end-to-end enkripcijom podataka. Vaši
+                  podaci su bezbedni.
+                </v-card-text-stub>
+              </v-card-stub>
+            </v-flex-stub>
+          </v-layout-stub>
+        </v-container-stub>
+      </v-flex-stub>
+    </v-layout-stub>
+  </section>
+  <section>
+    <v-parallax-stub height="500" alt="" src="">
+      <v-card-stub tag="div" color="primary">
+        <v-layout-stub tag="div" column="" align-center="" justify-center="" class="white--text">
+          <h1 class="mb-2 display-1 text-xs-center">Potrebna je pomoć?</h1>
+          <div class="subheading mb-3 text-xs-center">
+            Obratite se emailom na:
+            <a href="mailto:it@darex.rs" class="orange--text lighten-2">it@darex.rs</a></div>
+        </v-layout-stub>
+      </v-card-stub>
+    </v-parallax-stub>
+  </section>
+</div>
+`;

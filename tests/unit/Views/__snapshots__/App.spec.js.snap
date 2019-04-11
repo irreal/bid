@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Root renders the component 1`] = `
+<div data-app="true" class="application theme--light" id="inspire">
+  <div class="application--wrap">
+    <!---->
+    <nav class="accent--text v-toolbar v-toolbar--fixed theme--dark primary" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+      <div class="v-toolbar__content" style="height: 64px;">
+        <!---->
+        <div class="v-toolbar__title">Darex BID</div>
+      </div>
+    </nav>
+    <main class="v-content" style="padding: 64px 0px 0px 0px;">
+      <div class="v-content__wrap">
+        <router-view-stub></router-view-stub>
+      </div>
+    </main>
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`App Root renders the component with a logged in user 1`] = `
+<div data-app="true" class="application theme--light" id="inspire">
+  <div class="application--wrap">
+    <aside class="blue-grey darken-2 v-navigation-drawer v-navigation-drawer--close v-navigation-drawer--fixed v-navigation-drawer--is-mobile theme--dark" style="height: 100%; margin-top: 0px; transform: translateX(-300px); width: 300px;">
+      <nav class="transparent v-toolbar elevation-0 theme--dark" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+        <div class="v-toolbar__content" style="height: 64px;">
+          <div role="list" class="v-list pa-0 theme--dark">
+            <div role="listitem">
+              <div class="v-list__tile v-list__tile--avatar theme--dark">
+                <div class="v-list__tile__avatar">
+                  <div class="v-avatar accent" style="height: 40px; width: 40px;"><span class="white--text">MS</span></div>
+                </div>
+                <div class="v-list__tile__content">
+                  <div class="v-list__tile__title">Miloš Spasojević</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div role="list" class="v-list v-list--dense theme--dark">
+        <div role="listitem"><a class="v-list__tile v-list__tile--link theme--dark">
+            <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--dark">dashboard</i></div>
+            <div class="v-list__tile__content">
+              <div class="v-list__tile__title">Dashboard</div>
+            </div>
+          </a></div>
+        <div role="listitem" class="menu-item-plans"><a class="v-list__tile v-list__tile--link theme--dark">
+            <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--dark">calendar_today</i></div>
+            <div class="v-list__tile__content">
+              <div class="v-list__tile__title">Planovi Prodaje</div>
+            </div>
+          </a></div>
+        <div role="listitem" class="menu-item-logout"><a class="v-list__tile v-list__tile--link theme--dark">
+            <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--dark">logout</i></div>
+            <div class="v-list__tile__content">
+              <div class="v-list__tile__title">Izloguj se</div>
+            </div>
+          </a></div>
+      </div>
+      <div class="v-navigation-drawer__border"></div>
+    </aside>
+    <nav class="accent--text v-toolbar v-toolbar--fixed theme--dark primary" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
+      <div class="v-toolbar__content" style="height: 64px;"><button type="button" class="v-toolbar__side-icon v-btn v-btn--icon theme--dark">
+          <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--dark">menu</i></div>
+        </button>
+        <div class="v-toolbar__title">Darex BID</div>
+      </div>
+    </nav>
+    <main class="v-content" style="padding: 64px 0px 32px 0px;">
+      <div class="v-content__wrap">
+        <router-view-stub></router-view-stub>
+      </div>
+    </main>
+    <footer class="v-footer v-footer--fixed theme--light primary" style="height: 32px;"><span class="white--text">© 2017</span></footer>
+  </div>
+</div>
+`;

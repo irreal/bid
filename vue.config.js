@@ -8,5 +8,8 @@ module.exports = {
       maskIcon: "img/icons/safari-pinned-tab.svg",
       msapplication: "/img/icons/browserconfig.xml"
     }
+  },
+  configureWebpack: {
+    devtool: "source-map"
   }
 };

@@ -30,7 +30,7 @@
             <v-list-tile-title>Dashboard</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="$router.push('plans')">
+        <v-list-tile class="menu-item-plans" @click="$router.push('plans')">
           <v-list-tile-action>
             <v-icon>calendar_today</v-icon>
           </v-list-tile-action>
@@ -38,7 +38,10 @@
             <v-list-tile-title>Planovi Prodaje</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile @click="triggerNetlifyIdentityAction('logout')">
+        <v-list-tile
+          class="menu-item-logout"
+          @click="triggerNetlifyIdentityAction('logout')"
+        >
           <v-list-tile-action>
             <v-icon>logout</v-icon>
           </v-list-tile-action>
@@ -113,13 +116,13 @@ export default {
       this.triggerNetlifyIdentityAction("signup");
     });
   },
+  beforeDestroy() {
+    EventBus.$off();
+  },
   methods: {
     ...mapActions({
       updateUser: "updateUser"
     }),
-    noop() {
-      alert("no op");
-    },
     triggerNetlifyIdentityAction(action) {
       if (action == "login" || action == "signup") {
         netlifyIdentity.open(action);
