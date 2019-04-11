@@ -1,10 +1,12 @@
 <template>
   <div>
-    <h1>Aktivni planovi:</h1>
     <div class="plan-container d-flex flex-column">
-      <plan-progress name="kvartalni plan prodaje" :progress="50" />
-      <plan-progress name="godišnji plan prodaje" :progress="50" />
-      <plan-progress name="specijalni plan prodaje" :progress="50" />
+      <apexchart
+        type="bar"
+        height="100%"
+        :options="chartOptions"
+        :series="chartData"
+      />
     </div>
   </div>
 </template>
@@ -13,14 +15,27 @@ h1 {
   margin-left: 25px;
 }
 .plan-container {
-  height: 500px;
+  height: 85vh;
 }
 </style>
 
 <script>
-import PlanProgress from "@/components/Plans/PlanProgress.vue";
+import chartOptions from "./PlanChartOptions";
+
 export default {
   name: "PlanHomePage",
-  components: { PlanProgress }
+  computed: {
+    chartData() {
+      return [{ name: "Realizacija", data: [50, 100] }];
+    },
+    chartOptions() {
+      const options = { ...chartOptions };
+      options.xaxis.categories = ["Plan 1", "Plan 2"];
+      return options;
+    }
+  },
+  data() {
+    return {};
+  }
 };
 </script>

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Plan Home Page renders the component 1`] = `
+<div>
+  <div class="plan-container d-flex flex-column">
+    <apexchart-stub options="[object Object]" type="bar" series="[object Object]" width="100%" height="100%"></apexchart-stub>
+  </div>
+</div>
+`;
+
+exports[`Plan Home Page renders the component with a logged in user 1`] = `
+<div>
+  <div class="plan-container d-flex flex-column">
+    <apexchart-stub options="[object Object]" type="bar" series="[object Object]" width="100%" height="100%"></apexchart-stub>
+  </div>
+</div>
+`;
