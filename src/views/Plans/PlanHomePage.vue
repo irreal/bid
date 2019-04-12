@@ -29,7 +29,10 @@ export default {
       return [
         {
           name: "Realizacija",
-          data: this.plans ? this.plans.map(p => p.percent_complete) : []
+          data:
+            this.plans && this.plans.length
+              ? this.plans.map(p => p.percent_complete)
+              : []
         }
       ];
     },
@@ -39,7 +42,8 @@ export default {
         ...chartOptions.chart,
         events: { dataPointSelection: this.clickedItem }
       };
-      options.xaxis.categories = this.plans ? this.plans.map(p => p.title) : [];
+      options.xaxis.categories =
+        this.plans && this.plans.length ? this.plans.map(p => p.title) : [];
       return options;
     },
     plans() {
@@ -56,7 +60,6 @@ export default {
     clickedItem(_, __, { selectedDataPoints }) {
       if (selectedDataPoints[0][0] !== undefined) {
         const plan = this.plans[selectedDataPoints[0][0]];
-        console.log("plan je", plan);
         if (plan) {
           this.$router.push({
             name: "plan-detail",

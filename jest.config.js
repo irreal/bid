@@ -22,7 +22,9 @@ module.exports = {
     "src/**/*.{js,vue}",
     "!src/main.js", // No need to cover bootstrap file
     "!src/lambda/*",
-    "!src/models/*"
+    "!src/models/*",
+    "!src/registerServiceWorker.js",
+    "!src/plugins/vuetify.js"
   ],
   coverageReporters: ["lcov", "text"]
 };

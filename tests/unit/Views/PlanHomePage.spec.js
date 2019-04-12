@@ -97,4 +97,27 @@ describe("Plan Home Page", () => {
       plansFixture.map(pf => pf.title)
     );
   });
+
+  it("reacts to selecting a plan by navigating", () => {
+    const { plan, store } = build();
+    plan.vm.$router = { push: jest.fn() };
+    store.replaceState({ ...store.state, plans: { items: plansFixture } });
+    plan.vm.clickedItem(null, null, { selectedDataPoints: [[0]] });
+    expect(plan.vm.$router.push).toBeCalledWith({
+      name: "plan-detail",
+      params: { planId: plansFixture[0]._id }
+    });
+  });
+  it("reacts to selecting a plan by doing nothing if plan not found", () => {
+    const { plan } = build();
+    plan.vm.$router = { push: jest.fn() };
+    plan.vm.clickedItem(null, null, { selectedDataPoints: [[0]] });
+    expect(plan.vm.$router.push).not.toBeCalled();
+  });
+  it("reacts to selecting a plan by doing nothing if selected data point is not provided ", () => {
+    const { plan } = build();
+    plan.vm.$router = { push: jest.fn() };
+    plan.vm.clickedItem(null, null, { selectedDataPoints: [[undefined]] });
+    expect(plan.vm.$router.push).not.toBeCalled();
+  });
 });
