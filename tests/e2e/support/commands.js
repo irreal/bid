@@ -12,7 +12,10 @@
 // -- This is a parent command --
 Cypress.Commands.add(
   "login",
-  (email = "milos.s.pfc@gmail.com", password = "Test1234!!") => {
+  (
+    email = Cypress.env("TEST_USERNAME"),
+    password = Cypress.env("TEST_PASSWORD")
+  ) => {
     cy.request({
       method: "POST",
       url: "https://www.darex.ml/.netlify/identity/token",
@@ -23,17 +26,19 @@ Cypress.Commands.add(
       },
       form: true
     }).then(resp => {
-      const token = resp.body.access_token;
+      const token = resp.body;
+      const access_token = token.access_token;
       cy.request({
         method: "GET",
         url: "https://www.darex.ml/.netlify/identity/user",
-        headers: { Authorization: `Bearer ${token}` }
+        headers: { Authorization: `Bearer ${access_token}` }
       }).then(userResp => {
         const localStorageToken = Object.assign(userResp.body, {
           url: "https://www.darex.ml/.netlify/identity",
-          token: token
+          token
         });
         localStorage.setItem("gotrue.user", JSON.stringify(localStorageToken));
+        return localStorageToken;
       });
     });
   }
