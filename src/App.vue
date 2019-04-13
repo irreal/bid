@@ -22,7 +22,7 @@
         </v-list>
       </v-toolbar>
       <v-list dense>
-        <v-list-tile @click="$router.push('home')">
+        <v-list-tile @click="$router.push({ name: 'home' })">
           <v-list-tile-action>
             <v-icon>dashboard</v-icon>
           </v-list-tile-action>
@@ -30,7 +30,11 @@
             <v-list-tile-title>Dashboard</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile class="menu-item-plans" @click="$router.push('plans')">
+        <v-list-tile
+          data-test="menu-button-sale-plans"
+          class="menu-item-plans"
+          @click="$router.push({ name: 'plans' })"
+        >
           <v-list-tile-action>
             <v-icon>calendar_today</v-icon>
           </v-list-tile-action>
@@ -53,6 +57,7 @@
     </v-navigation-drawer>
     <v-toolbar color="primary" class="accent--text" fixed app dark>
       <v-toolbar-side-icon
+        data-test="menu-toggle"
         v-if="isLoggedIn"
         @click.stop="drawer = !drawer"
       ></v-toolbar-side-icon>

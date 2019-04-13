@@ -27,7 +27,7 @@
         <OverviewCard
           full-width
           color="accent"
-          @click="$router.push('plans')"
+          @click="$router.push({ name: 'plans' })"
           icon="fa-chart-line"
         >
           <template v-slot:header>
@@ -46,7 +46,7 @@
         <OverviewCard
           full-width
           color="accent"
-          @click="$router.push('plans')"
+          @click="$router.push({ name: 'plans' })"
           icon="fa-chart-line"
         >
           <template v-slot:header>

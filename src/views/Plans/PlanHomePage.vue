@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="fill-height plan-page">
     <div class="plan-container d-flex flex-column">
       <apexchart
+        data-test="plans-chart"
         type="bar"
         height="100%"
         :options="chartOptions"
@@ -16,6 +17,9 @@ h1 {
 }
 .plan-container {
   height: 85vh;
+}
+.plan-page {
+  background-color: #eee;
 }
 </style>
 

@@ -31,7 +31,7 @@
                 outline
                 data-test="dashboard-button"
                 color="accent"
-                @click="$router.push('home')"
+                @click="$router.push({ name: 'home' })"
                 >Dashboard</v-btn
               >
               <span>ili</span>

@@ -10,7 +10,7 @@ export default {
       distributed: true,
       horizontal: true,
       dataLabels: {
-        position: "center"
+        position: "bottom"
       }
     }
   },
@@ -28,15 +28,14 @@ export default {
   ],
   dataLabels: {
     enabled: true,
-    textAnchor: "middle",
+    textAnchor: "start",
     style: {
-      fontSize: "24px",
+      fontSize: "18px",
       colors: ["#fff"]
     },
     formatter: function(val, opt) {
       return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val;
     },
-    offsetX: 0,
     dropShadow: {
       enabled: true
     }
