@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome component renders the component 1`] = `<v-layout-stub tag="div" align-end="" py-3=""><span class="headline">Zdravo, <strong>neulogovani korisnik</strong></span></v-layout-stub>`;
+
+exports[`Welcome component renders the component with a logged in user 1`] = `<v-layout-stub tag="div" align-end="" py-3=""><span class="headline">Zdravo, <strong>Miloš Spasojević</strong></span></v-layout-stub>`;

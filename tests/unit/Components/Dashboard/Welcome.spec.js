@@ -1,29 +1,29 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Vuex from "vuex";
-import Dashboard from "@/views/Dashboard";
+import Welcome from "@/components/Dashboard/Welcome";
 import Vuetify from "vuetify";
 import Vue from "vue";
 import initialState from "@/store/state";
 import actions from "@/store/actions";
 import getters from "@/store/getters";
 import mutations from "@/store/mutations";
-import userFixture from "../fixtures/user";
+import userFixture from "../../fixtures/user";
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
 Vue.use(Vuetify);
 
-describe("Dashboard Page", () => {
+describe("Welcome component", () => {
   let state;
 
   const build = () => {
-    const dashboard = shallowMount(Dashboard, {
+    const welcome = shallowMount(Welcome, {
       localVue,
       store: new Vuex.Store({ state, actions, getters, mutations })
     });
 
     return {
-      dashboard
+      welcome
     };
   };
 
@@ -32,23 +32,18 @@ describe("Dashboard Page", () => {
   });
   it("renders the component", () => {
     // arrange
-    const { dashboard } = build();
+    const { welcome } = build();
     // assert
-    expect(dashboard.html()).toMatchSnapshot();
+    expect(welcome.html()).toMatchSnapshot();
+    expect(welcome.html()).toContain("neulogovani korisnik");
   });
 
   it("renders the component with a logged in user", () => {
     // arrange
     state.user = userFixture;
-    const { dashboard } = build();
+    const { welcome } = build();
     // assert
-    expect(dashboard.html()).toMatchSnapshot();
-  });
-
-  it("formats labels for the overview chart", () => {
-    const { dashboard } = build();
-    expect(
-      dashboard.vm.options.plotOptions.radialBar.dataLabels.total.formatter()
-    ).toEqual("62%");
+    expect(welcome.html()).toMatchSnapshot();
+    expect(welcome.html()).toContain(userFixture.user_metadata.full_name);
   });
 });

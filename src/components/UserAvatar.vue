@@ -13,7 +13,7 @@ export default {
       return this.user ? this.user.user_metadata.full_name : "";
     },
     userInitials() {
-      var initials = this.username.match(/\b\w/g) || [];
+      let initials = this.username.match(/\b\w/g) || [];
       initials = (
         (initials.shift() || "") + (initials.pop() || "")
       ).toUpperCase();

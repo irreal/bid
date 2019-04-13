@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Overview Card renders the component 1`] = `
+<v-card-stub tag="div">
+  <!---->
+  <v-card-text-stub></v-card-text-stub>
+  <!---->
+  <!---->
+</v-card-stub>
+`;
+
+exports[`Overview Card renders the component with slots 1`] = `
+<v-card-stub tag="div" style="margin-bottom: 24px; margin-top: 48px;">
+  <helper-offset-stub offset="24">
+    <v-card-stub tag="div" color="secondary" dark="true" class="v-card--material__header elevation-10">
+      <p>this is a header</p>
+    </v-card-stub>
+  </helper-offset-stub>
+  <v-card-text-stub></v-card-text-stub>
+  <!---->
+  <!---->
+</v-card-stub>
+`;

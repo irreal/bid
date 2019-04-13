@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserAvatar component renders the component 1`] = `<span>N/A</span>`;
+
+exports[`UserAvatar component renders the component with a logged in user 1`] = `<span>MS</span>`;

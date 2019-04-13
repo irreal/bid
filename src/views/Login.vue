@@ -106,7 +106,11 @@
                   <v-card-title primary-title class="layout justify-center">
                     <div class="headline text-xs-center">Bezbednost</div>
                   </v-card-title>
-                  <v-card-text> </v-card-text>
+                  <v-card-text>
+                    BID koristi autentifikacione metode po poslednjem standardu,
+                    zajedno sa end-to-end enkripcijom podataka. Vaši podaci su
+                    bezbedni.</v-card-text
+                  >
                 </v-card>
               </v-flex>
             </v-layout>

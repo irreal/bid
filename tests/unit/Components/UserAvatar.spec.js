@@ -1,6 +1,6 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Vuex from "vuex";
-import Dashboard from "@/views/Dashboard";
+import UserAvatar from "@/components/UserAvatar";
 import Vuetify from "vuetify";
 import Vue from "vue";
 import initialState from "@/store/state";
@@ -13,42 +13,42 @@ const localVue = createLocalVue();
 localVue.use(Vuex);
 Vue.use(Vuetify);
 
-describe("Dashboard Page", () => {
+describe("UserAvatar component", () => {
   let state;
 
   const build = () => {
-    const dashboard = shallowMount(Dashboard, {
+    const ua = shallowMount(UserAvatar, {
       localVue,
       store: new Vuex.Store({ state, actions, getters, mutations })
     });
 
     return {
-      dashboard
+      ua
     };
   };
 
   beforeEach(() => {
     state = { ...initialState };
   });
+
   it("renders the component", () => {
     // arrange
-    const { dashboard } = build();
+    const { ua } = build();
     // assert
-    expect(dashboard.html()).toMatchSnapshot();
+    expect(ua.html()).toMatchSnapshot();
+    expect(ua.html()).toContain("N/A");
   });
 
   it("renders the component with a logged in user", () => {
     // arrange
     state.user = userFixture;
-    const { dashboard } = build();
+    const { ua } = build();
     // assert
-    expect(dashboard.html()).toMatchSnapshot();
-  });
-
-  it("formats labels for the overview chart", () => {
-    const { dashboard } = build();
-    expect(
-      dashboard.vm.options.plotOptions.radialBar.dataLabels.total.formatter()
-    ).toEqual("62%");
+    expect(ua.html()).toMatchSnapshot();
+    let initials = userFixture.user_metadata.full_name.match(/\b\w/g) || [];
+    initials = (
+      (initials.shift() || "") + (initials.pop() || "")
+    ).toUpperCase();
+    expect(ua.html()).toContain(initials);
   });
 });
