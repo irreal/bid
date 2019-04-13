@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Plan Details Page renders the component 1`] = `
+<div class="fill-height plan-page">
+  <plan-header-stub plan="[object Object]"></plan-header-stub>
+</div>
+`;

@@ -37,7 +37,7 @@ export default new Router({
     {
       path: "/plan-detail/:planId",
       name: "plan-detail",
-      component: () => import("./views/Dashboard.vue"),
+      component: () => import("./views/Plans/PlanDetailsPage.vue"),
       beforeEnter: loginGuard
     },
     {

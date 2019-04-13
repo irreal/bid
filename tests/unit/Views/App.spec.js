@@ -56,7 +56,7 @@ describe("App Root", () => {
     app.vm.$router = { push: jest.fn() };
     app.find(".menu-item-plans").vm.$emit("click");
 
-    expect(app.vm.$router.push).toBeCalledWith("plans");
+    expect(app.vm.$router.push).toBeCalledWith({ name: "plans" });
     app.destroy();
   });
 

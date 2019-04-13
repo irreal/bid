@@ -9,7 +9,8 @@ export default {
     }
   },
   getters: {
-    all: state => state.items
+    all: state => state.items,
+    find: state => id => state.items.find(i => i._id === id)
   },
   actions: {
     load: ({ commit }) => {

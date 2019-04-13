@@ -47,7 +47,7 @@ exports[`App Root renders the component with a logged in user 1`] = `
               <div class="v-list__tile__title">Dashboard</div>
             </div>
           </a></div>
-        <div role="listitem" class="menu-item-plans"><a class="v-list__tile v-list__tile--link theme--dark">
+        <div role="listitem" class="menu-item-plans"><a data-test="menu-button-sale-plans" class="v-list__tile v-list__tile--link theme--dark">
             <div class="v-list__tile__action"><i aria-hidden="true" class="v-icon material-icons theme--dark">calendar_today</i></div>
             <div class="v-list__tile__content">
               <div class="v-list__tile__title">Planovi Prodaje</div>
@@ -63,7 +63,7 @@ exports[`App Root renders the component with a logged in user 1`] = `
       <div class="v-navigation-drawer__border"></div>
     </aside>
     <nav class="accent--text v-toolbar v-toolbar--fixed theme--dark primary" style="margin-top: 0px; padding-right: 0px; padding-left: 0px; transform: translateY(0px);">
-      <div class="v-toolbar__content" style="height: 64px;"><button type="button" class="v-toolbar__side-icon v-btn v-btn--icon theme--dark">
+      <div class="v-toolbar__content" style="height: 64px;"><button type="button" class="v-toolbar__side-icon v-btn v-btn--icon theme--dark" data-test="menu-toggle">
           <div class="v-btn__content"><i aria-hidden="true" class="v-icon material-icons theme--dark">menu</i></div>
         </button>
         <div class="v-toolbar__title">Darex BID</div>

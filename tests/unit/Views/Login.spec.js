@@ -88,7 +88,7 @@ describe("Login Page", () => {
     expect(EventBus.$emit).toBeCalledWith("logout");
 
     login.find("#btn-home").vm.$emit("click");
-    expect(login.vm.$router.push).toBeCalledWith("home");
+    expect(login.vm.$router.push).toBeCalledWith({ name: "home" });
 
     expect(login.find("#btn-login").vm).toBe(undefined);
     expect(login.find("#btn-signup").vm).toBe(undefined);

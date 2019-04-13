@@ -43,6 +43,19 @@ Cypress.Commands.add(
     });
   }
 );
+Cypress.Commands.add("mockLogin", () => {
+  cy.fixture("user.json").then(user => {
+    localStorage.setItem("gotrue.user", JSON.stringify(user));
+  });
+});
+Cypress.Commands.add("mockPlansRoute", () => {
+  cy.server();
+  cy.route({
+    method: "GET",
+    url: "/.netlify/functions/plans",
+    response: "fixture:plans.json"
+  });
+});
 //
 //
 // -- This is a child command --

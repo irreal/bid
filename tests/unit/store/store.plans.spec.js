@@ -17,6 +17,13 @@ describe("plans store", () => {
     store.replaceState({ ...initialState, plans: { items: plansFixture } });
     expect(store.getters["plans/all"]).toEqual(plansFixture);
   });
+  it("finds specific plan by id", () => {
+    expect(store.getters["plans/find"](plansFixture[0]._id)).not.toBeDefined();
+    store.replaceState({ ...initialState, plans: { items: plansFixture } });
+    expect(store.getters["plans/find"](plansFixture[0]._id)).toEqual(
+      plansFixture[0]
+    );
+  });
 
   it("commits plans", () => {
     store.commit("plans/set", plansFixture);
