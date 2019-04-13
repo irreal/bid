@@ -47,11 +47,6 @@ export default {
     plan: {
       required: true,
       type: Object
-    },
-    data() {
-      return {
-        percentAnimation: 0
-      };
     }
   },
   computed: {}
