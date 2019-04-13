@@ -10,7 +10,7 @@
     </div>
     <div class="main-overview">
       <v-layout justify-space-around wrap>
-        <OverviewCard color="accent" full-width>
+        <overview-card color="accent" full-width>
           <template v-slot:header>
             <apexchart
               class="plan-chart"
@@ -23,8 +23,8 @@
           <p class="category d-inline-flex font-weight-light">
             Realizacija periodičnih planova prodaje
           </p>
-        </OverviewCard>
-        <OverviewCard
+        </overview-card>
+        <overview-card
           full-width
           color="accent"
           @click="$router.push({ name: 'plans' })"
@@ -42,8 +42,8 @@
           <p class="category d-inline-flex font-weight-light">
             Realizacija periodičnih planova prodaje
           </p>
-        </OverviewCard>
-        <OverviewCard
+        </overview-card>
+        <overview-card
           full-width
           color="accent"
           @click="$router.push({ name: 'plans' })"
@@ -61,7 +61,7 @@
           <p class="category d-inline-flex font-weight-light">
             Realizacija periodičnih planova prodaje
           </p>
-        </OverviewCard>
+        </overview-card>
       </v-layout>
     </div>
   </div>
@@ -71,7 +71,7 @@
 <script>
 import Quickview from "@/components/Dashboard/Quickview.vue";
 import Welcome from "@/components/Dashboard/Welcome.vue";
-import OverviewCard from "@/components/Dashboard/OverviewCard.vue";
+import OverviewCard from "@/components/OverviewCard.vue";
 export default {
   name: "Dashboard",
   components: { Quickview, Welcome, OverviewCard },

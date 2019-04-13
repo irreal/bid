@@ -12,24 +12,24 @@ exports[`Dashboard Page renders the component 1`] = `
   </div>
   <div class="main-overview">
     <v-layout-stub tag="div" justify-space-around="" wrap="">
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24">
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
+      </overview-card-stub>
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
+      </overview-card-stub>
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
+      </overview-card-stub>
     </v-layout-stub>
   </div>
 </div>
@@ -47,24 +47,24 @@ exports[`Dashboard Page renders the component with a logged in user 1`] = `
   </div>
   <div class="main-overview">
     <v-layout-stub tag="div" justify-space-around="" wrap="">
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24">
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
+      </overview-card-stub>
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
+      </overview-card-stub>
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
+      </overview-card-stub>
     </v-layout-stub>
   </div>
 </div>

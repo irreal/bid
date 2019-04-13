@@ -1,6 +1,6 @@
 import { shallowMount, createLocalVue } from "@vue/test-utils";
 import Vuex from "vuex";
-import OverviewCard from "@/components/Dashboard/OverviewCard";
+import OverviewCard from "@/components/OverviewCard";
 import Vuetify from "vuetify";
 import Vue from "vue";
 
