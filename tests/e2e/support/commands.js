@@ -10,7 +10,34 @@
 //
 //
 // -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
+Cypress.Commands.add(
+  "login",
+  (email = "milos.s.pfc@gmail.com", password = "Test1234!!") => {
+    cy.request({
+      method: "POST",
+      url: "https://www.darex.ml/.netlify/identity/token",
+      body: {
+        grant_type: "password",
+        username: email,
+        password
+      },
+      form: true
+    }).then(resp => {
+      const token = resp.body.access_token;
+      cy.request({
+        method: "GET",
+        url: "https://www.darex.ml/.netlify/identity/user",
+        headers: { Authorization: `Bearer ${token}` }
+      }).then(userResp => {
+        const localStorageToken = Object.assign(userResp.body, {
+          url: "https://www.darex.ml/.netlify/identity",
+          token: token
+        });
+        localStorage.setItem("gotrue.user", JSON.stringify(localStorageToken));
+      });
+    });
+  }
+);
 //
 //
 // -- This is a child command --

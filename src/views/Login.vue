@@ -29,6 +29,7 @@
               <v-btn
                 id="btn-home"
                 outline
+                data-test="dashboard-button"
                 color="accent"
                 @click="$router.push('home')"
                 >Dashboard</v-btn
@@ -37,6 +38,7 @@
               <v-btn
                 id="btn-logout"
                 outline
+                data-test="logout-button"
                 color="accent"
                 @click="emitGlobal('logout')"
                 >Izloguj se</v-btn
@@ -45,6 +47,7 @@
             <div v-else>
               <v-btn
                 id="btn-login"
+                data-test="login-button"
                 outline
                 color="accent"
                 @click="emitGlobal('login')"
@@ -54,6 +57,7 @@
               <v-btn
                 id="btn-signup"
                 outline
+                data-test="signup-button"
                 color="accent"
                 @click="emitGlobal('signup')"
                 >Kreiraj nalog</v-btn
@@ -102,11 +106,7 @@
                   <v-card-title primary-title class="layout justify-center">
                     <div class="headline text-xs-center">Bezbednost</div>
                   </v-card-title>
-                  <v-card-text>
-                    BID koristi autentifikacione metode koje su standard u
-                    industriji, zajedno sa end-to-end enkripcijom podataka. Vaši
-                    podaci su bezbedni.
-                  </v-card-text>
+                  <v-card-text> </v-card-text>
                 </v-card>
               </v-flex>
             </v-layout>
