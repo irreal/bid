@@ -39,8 +39,7 @@ describe("Plan Home Page", () => {
     });
 
     return {
-      plan,
-      store
+      plan
     };
   };
 
@@ -63,22 +62,6 @@ describe("Plan Home Page", () => {
     expect(plan.html()).toMatchSnapshot();
   });
 
-  it("gets the plans from the store", () => {
-    const { plan, store } = build();
-    store.replaceState({ ...store.state, plans: { items: plansFixture } });
-    expect(plan.vm.plans).toEqual(plansFixture);
-  });
-
-  it("dispatches the load plans action", () => {
-    const loadAction = jest.fn();
-    const customStore = {
-      ...defaultStoreObject()
-    };
-    customStore.modules.plans.actions = { load: loadAction };
-    build(customStore);
-    expect(loadAction).toBeCalled();
-  });
-
   it("exposes empty chart data if there are no plans", () => {
     const { plan } = build();
     expect(plan.vm.chartData[0].data).toEqual([]);
@@ -87,8 +70,10 @@ describe("Plan Home Page", () => {
   });
 
   it("exposes plans through chart properties", () => {
-    const { plan, store } = build();
-    store.replaceState({ ...store.state, plans: { items: plansFixture } });
+    const { plan } = build();
+    plan.setData({
+      plans: plansFixture
+    });
     expect(plan.vm.chartData[0].data).toEqual(
       plansFixture.map(pf => pf.percent_complete)
     );
@@ -99,9 +84,11 @@ describe("Plan Home Page", () => {
   });
 
   it("reacts to selecting a plan by navigating", () => {
-    const { plan, store } = build();
+    const { plan } = build();
     plan.vm.$router = { push: jest.fn() };
-    store.replaceState({ ...store.state, plans: { items: plansFixture } });
+    plan.setData({
+      plans: plansFixture
+    });
     plan.vm.clickedItem(null, null, { selectedDataPoints: [[0]] });
     expect(plan.vm.$router.push).toBeCalledWith({
       name: "plan-detail",

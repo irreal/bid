@@ -24,7 +24,8 @@ module.exports = {
     "!src/lambda/*",
     "!src/models/*",
     "!src/registerServiceWorker.js",
-    "!src/plugins/vuetify.js"
+    "!src/plugins/vuetify.js",
+    "!src/plugins/vue-apollo.js"
   ],
   coverageReporters: ["lcov", "text"]
 };

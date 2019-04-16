@@ -7,7 +7,7 @@ import "./registerServiceWorker";
 import VueApexCharts from "vue-apexcharts";
 import netlifyWidget from "netlify-identity-widget";
 import registerAxiosInterceptor from "./registerAxiosInterceptor";
-import { createProvider } from "./vue-apollo";
+import { createProvider } from "./plugins/vue-apollo";
 
 registerAxiosInterceptor();
 
@@ -20,10 +20,20 @@ Vue.use(VueApexCharts);
 Vue.component("apexchart", VueApexCharts);
 
 Vue.config.productionTip = false;
-
+const apolloProvider = createProvider();
+const user = netlifyWidget.currentUser();
+if (user && user.token && user.token.access_token) {
+  localStorage.setItem("apollo-token", user.token.access_token);
+}
+netlifyWidget.on("login", ({ token: { access_token } }) => {
+  localStorage.setItem("apollo-token", access_token);
+});
+netlifyWidget.on("logout", () => {
+  localStorage.removeItem("apollo-token");
+});
 new Vue({
   router,
   store,
-  apolloProvider: createProvider(),
+  apolloProvider: apolloProvider,
   render: h => h(App)
 }).$mount("#app");

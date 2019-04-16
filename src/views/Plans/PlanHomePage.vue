@@ -25,6 +25,7 @@ h1 {
 
 <script>
 import chartOptions from "./PlanChartOptions";
+import gql from "graphql-tag";
 
 export default {
   name: "PlanHomePage",
@@ -49,16 +50,23 @@ export default {
       options.xaxis.categories =
         this.plans && this.plans.length ? this.plans.map(p => p.title) : [];
       return options;
-    },
-    plans() {
-      return this.$store.getters["plans/all"];
     }
   },
-  data() {
-    return {};
+  apollo: {
+    plans: gql`
+      {
+        plans {
+          title
+          percent_complete
+          created_by
+        }
+      }
+    `
   },
-  mounted() {
-    this.$store.dispatch("plans/load");
+  data() {
+    return {
+      plans: []
+    };
   },
   methods: {
     clickedItem(_, __, { selectedDataPoints }) {
