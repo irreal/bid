@@ -20,7 +20,11 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     "src/**/*.{js,vue}",
-    "!src/main.js" // No need to cover bootstrap file
+    "!src/main.js", // No need to cover bootstrap file
+    "!src/lambda/*",
+    "!src/models/*",
+    "!src/registerServiceWorker.js",
+    "!src/plugins/vuetify.js"
   ],
-  coverageReporters: ["lcov"]
+  coverageReporters: ["lcov", "text"]
 };

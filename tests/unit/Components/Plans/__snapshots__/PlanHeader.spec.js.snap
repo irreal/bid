@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Plan Header component renders 1`] = `
+<v-layout-stub tag="div" my-4="" justify-center="">
+  <v-card-stub tag="div" class="plan-card">
+    <v-card-text-stub>
+      <v-layout-stub tag="div" align-center="" pr-5="">
+        <div><span class="headline">moj plan novi</span>
+          <p>Autor plana: milos.s.pfc@gmail.com</p>
+          <p>ispunjenost plana: 2%</p>
+        </div>
+        <v-progress-circular-stub color="accent" rotate="-90" size="100" width="15" value="2" class="ml-auto">
+          2%
+        </v-progress-circular-stub>
+        <div class="plan-tools"><a href="" class="icon-link">
+            <v-icon-stub>edit</v-icon-stub>
+          </a> <a href="" class="icon-link">
+            <v-icon-stub>delete</v-icon-stub>
+          </a></div>
+      </v-layout-stub>
+    </v-card-text-stub>
+  </v-card-stub>
+</v-layout-stub>
+`;

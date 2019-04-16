@@ -3,7 +3,7 @@
 exports[`Dashboard Page renders the component 1`] = `
 <div>
   <div>
-    <v-parallax-stub height="180" alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1609106/lake-shadow-water.jpg">
+    <v-parallax-stub height="180" alt="" src="">
       <v-layout-stub tag="div" wrap="">
         <welcome-stub></welcome-stub>
         <quickview-stub class="hidden-sm-and-down"></quickview-stub>
@@ -12,74 +12,25 @@ exports[`Dashboard Page renders the component 1`] = `
   </div>
   <div class="main-overview">
     <v-layout-stub tag="div" justify-space-around="" wrap="">
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24">
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
+      </overview-card-stub>
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
+      </overview-card-stub>
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
+      </overview-card-stub>
     </v-layout-stub>
-  </div>
-  <div class="main__cards">
-    <div class="card">
-      <div class="card__header">
-        <div class="card__header-title text-light">
-          Poslednji
-          <strong>Izveštaji&nbsp;</strong> <a href="#" class="card__header-link text-bold">Pregledaj sve</a></div>
-        <div class="settings">
-          <div class="settings__block"><i class="fas fa-edit"></i></div>
-          <div class="settings__block"><i class="fas fa-cog"></i></div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="documents">
-          <div class="document">
-            <div class="document__img"></div>
-            <div class="document__title">realizacija</div>
-            <div class="document__date">03.03.2019</div>
-          </div>
-          <div class="document">
-            <div class="document__img"></div>
-            <div class="document__title">budžet</div>
-            <div class="document__date">24.02.2019</div>
-          </div>
-          <div class="document">
-            <div class="document__img"></div>
-            <div class="document__title">zalihe</div>
-            <div class="document__date">10.02.2019</div>
-          </div>
-          <div class="document">
-            <div class="document__img"></div>
-            <div class="document__title">dospela potraživanja</div>
-            <div class="document__date">03.02.2019</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card card--finance">
-      <div class="card__header">
-        <div class="card__header-title text-light">
-          Plan
-          <strong>prodaje&nbsp;</strong> <a href="" class="card__header-link text-bold">Pregledaj sve</a></div>
-        <div class="settings">
-          <div class="settings__block"><i class="fas fa-edit"></i></div>
-          <div class="settings__block"><i class="fas fa-cog"></i></div>
-        </div>
-      </div>
-      <div id="chartdiv"></div>
-    </div>
   </div>
 </div>
 `;
@@ -87,7 +38,7 @@ exports[`Dashboard Page renders the component 1`] = `
 exports[`Dashboard Page renders the component with a logged in user 1`] = `
 <div>
   <div>
-    <v-parallax-stub height="180" alt="" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1609106/lake-shadow-water.jpg">
+    <v-parallax-stub height="180" alt="" src="">
       <v-layout-stub tag="div" wrap="">
         <welcome-stub></welcome-stub>
         <quickview-stub class="hidden-sm-and-down"></quickview-stub>
@@ -96,74 +47,25 @@ exports[`Dashboard Page renders the component with a logged in user 1`] = `
   </div>
   <div class="main-overview">
     <v-layout-stub tag="div" justify-space-around="" wrap="">
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24">
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
+      </overview-card-stub>
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
-      <overviewcard-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
+      </overview-card-stub>
+      <overview-card-stub color="accent" elevation="10" fullwidth="true" offset="24" icon="fa-chart-line">
         <h4 class="title font-weight-light">Pregled realizacije</h4>
         <p class="category d-inline-flex font-weight-light">
           Realizacija periodičnih planova prodaje
         </p>
-      </overviewcard-stub>
+      </overview-card-stub>
     </v-layout-stub>
-  </div>
-  <div class="main__cards">
-    <div class="card">
-      <div class="card__header">
-        <div class="card__header-title text-light">
-          Poslednji
-          <strong>Izveštaji&nbsp;</strong> <a href="#" class="card__header-link text-bold">Pregledaj sve</a></div>
-        <div class="settings">
-          <div class="settings__block"><i class="fas fa-edit"></i></div>
-          <div class="settings__block"><i class="fas fa-cog"></i></div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="documents">
-          <div class="document">
-            <div class="document__img"></div>
-            <div class="document__title">realizacija</div>
-            <div class="document__date">03.03.2019</div>
-          </div>
-          <div class="document">
-            <div class="document__img"></div>
-            <div class="document__title">budžet</div>
-            <div class="document__date">24.02.2019</div>
-          </div>
-          <div class="document">
-            <div class="document__img"></div>
-            <div class="document__title">zalihe</div>
-            <div class="document__date">10.02.2019</div>
-          </div>
-          <div class="document">
-            <div class="document__img"></div>
-            <div class="document__title">dospela potraživanja</div>
-            <div class="document__date">03.02.2019</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card card--finance">
-      <div class="card__header">
-        <div class="card__header-title text-light">
-          Plan
-          <strong>prodaje&nbsp;</strong> <a href="" class="card__header-link text-bold">Pregledaj sve</a></div>
-        <div class="settings">
-          <div class="settings__block"><i class="fas fa-edit"></i></div>
-          <div class="settings__block"><i class="fas fa-cog"></i></div>
-        </div>
-      </div>
-      <div id="chartdiv"></div>
-    </div>
   </div>
 </div>
 `;

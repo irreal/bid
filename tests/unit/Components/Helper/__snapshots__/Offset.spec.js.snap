@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Offset helper renders the component 1`] = `<div class="v-offset" style="top: -0px; margin-bottom: -0px;"></div>`;
+
+exports[`Offset helper renders the component with slots 1`] = `
+<div class="v-offset" style="top: -0px; margin-bottom: -0px;">
+  <p>this content is offset</p>
+</div>
+`;

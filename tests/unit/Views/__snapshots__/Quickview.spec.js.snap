@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quickview View calls the weather lambda and displays nothing if call fails 1`] = `
+Object {
+  "icon": "",
+  "location": "nepoznato",
+  "temperature": "--°",
+}
+`;
+
+exports[`Quickview View calls the weather lambda and displays results 1`] = `
+Object {
+  "icon": "https://openweathermap.org/img/w/10d.png",
+  "location": "Belgrade",
+  "temperature": "8°",
+}
+`;
+
+exports[`Quickview View renders the component 1`] = `
+<v-layout-stub tag="div" align-end="" justify-end="" py-0="" class="headline">
+  <v-card-stub tag="div" color="transparent" height="150px" dark="true" class="pa-3 elevation-0">
+    <v-card-title-stub>
+      nepoznato
+    </v-card-title-stub>
+    <v-card-title-stub><span class="text-light">Lokacija</span></v-card-title-stub>
+  </v-card-stub>
+  <v-card-stub tag="div" color="transparent" height="150px" dark="true" class="pa-3 elevation-0">
+    <v-card-title-stub><span>--°</span></v-card-title-stub>
+    <v-card-title-stub><span class="text-light">Temperatura</span></v-card-title-stub>
+  </v-card-stub>
+  <v-card-stub tag="div" color="transparent" height="150px" dark="true" class="pa-3 elevation-0">
+    <v-card-title-stub class="py-0 pt-1 mb-2"><img src=""></v-card-title-stub>
+    <v-card-title-stub><span class="text-light">Vreme</span></v-card-title-stub>
+  </v-card-stub>
+</v-layout-stub>
+`;
+
+exports[`Quickview View renders the component with a logged in user 1`] = `
+<v-layout-stub tag="div" align-end="" justify-end="" py-0="" class="headline">
+  <v-card-stub tag="div" color="transparent" height="150px" dark="true" class="pa-3 elevation-0">
+    <v-card-title-stub>
+      nepoznato
+    </v-card-title-stub>
+    <v-card-title-stub><span class="text-light">Lokacija</span></v-card-title-stub>
+  </v-card-stub>
+  <v-card-stub tag="div" color="transparent" height="150px" dark="true" class="pa-3 elevation-0">
+    <v-card-title-stub><span>--°</span></v-card-title-stub>
+    <v-card-title-stub><span class="text-light">Temperatura</span></v-card-title-stub>
+  </v-card-stub>
+  <v-card-stub tag="div" color="transparent" height="150px" dark="true" class="pa-3 elevation-0">
+    <v-card-title-stub class="py-0 pt-1 mb-2"><img src=""></v-card-title-stub>
+    <v-card-title-stub><span class="text-light">Vreme</span></v-card-title-stub>
+  </v-card-stub>
+</v-layout-stub>
+`;

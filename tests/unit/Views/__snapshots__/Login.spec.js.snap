@@ -18,8 +18,8 @@ exports[`Login Page renders the component 1`] = `
         <div class="text-xs-center">
           <h2 class="headline">Trenutno niste ulogovani</h2>
           <div>
-            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-login">Uloguj se</v-btn-stub> <span>ili</span>
-            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-signup">Kreiraj nalog</v-btn-stub>
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-login" data-test="login-button">Uloguj se</v-btn-stub> <span>ili</span>
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-signup" data-test="signup-button">Kreiraj nalog</v-btn-stub>
           </div>
         </div>
       </v-flex-stub>
@@ -65,10 +65,9 @@ exports[`Login Page renders the component 1`] = `
                   <div class="headline text-xs-center">Bezbednost</div>
                 </v-card-title-stub>
                 <v-card-text-stub>
-                  BID koristi autentifikacione metode koje su standard u
-                  industriji, zajedno sa end-to-end enkripcijom podataka. Vaši
-                  podaci su bezbedni.
-                </v-card-text-stub>
+                  BID koristi autentifikacione metode po poslednjem standardu,
+                  zajedno sa end-to-end enkripcijom podataka. Vaši podaci su
+                  bezbedni.</v-card-text-stub>
               </v-card-stub>
             </v-flex-stub>
           </v-layout-stub>
@@ -111,8 +110,8 @@ exports[`Login Page renders the component with a logged in user 1`] = `
             Ulogovani korisnik: Miloš Spasojević
           </h2>
           <v-layout-stub tag="div" align-center="" justify-center="" column="" fill-height="">
-            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-home">Dashboard</v-btn-stub> <span>ili</span>
-            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-logout">Izloguj se</v-btn-stub>
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-home" data-test="dashboard-button">Dashboard</v-btn-stub> <span>ili</span>
+            <v-btn-stub color="accent" activeclass="v-btn--active" tag="button" outline="true" type="button" id="btn-logout" data-test="logout-button">Izloguj se</v-btn-stub>
           </v-layout-stub>
         </div>
       </v-flex-stub>
@@ -158,10 +157,9 @@ exports[`Login Page renders the component with a logged in user 1`] = `
                   <div class="headline text-xs-center">Bezbednost</div>
                 </v-card-title-stub>
                 <v-card-text-stub>
-                  BID koristi autentifikacione metode koje su standard u
-                  industriji, zajedno sa end-to-end enkripcijom podataka. Vaši
-                  podaci su bezbedni.
-                </v-card-text-stub>
+                  BID koristi autentifikacione metode po poslednjem standardu,
+                  zajedno sa end-to-end enkripcijom podataka. Vaši podaci su
+                  bezbedni.</v-card-text-stub>
               </v-card-stub>
             </v-flex-stub>
           </v-layout-stub>

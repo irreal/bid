@@ -44,4 +44,11 @@ describe("Dashboard Page", () => {
     // assert
     expect(dashboard.html()).toMatchSnapshot();
   });
+
+  it("formats labels for the overview chart", () => {
+    const { dashboard } = build();
+    expect(
+      dashboard.vm.options.plotOptions.radialBar.dataLabels.total.formatter()
+    ).toEqual("62%");
+  });
 });

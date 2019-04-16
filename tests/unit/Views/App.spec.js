@@ -56,7 +56,7 @@ describe("App Root", () => {
     app.vm.$router = { push: jest.fn() };
     app.find(".menu-item-plans").vm.$emit("click");
 
-    expect(app.vm.$router.push).toBeCalledWith("plans");
+    expect(app.vm.$router.push).toBeCalledWith({ name: "plans" });
     app.destroy();
   });
 
@@ -80,10 +80,36 @@ describe("App Root", () => {
     expect(netlifyIdentity.logout).toBeCalled();
     expect(app.vm.$router.push).toBeCalledWith({ name: "login" });
 
+    netlifyIdentity.close = jest.fn();
+    app.vm.$router = { push: jest.fn() };
     EventBus.$emit("signup");
     expect(netlifyIdentity.open).toBeCalledWith("signup");
     expect(netlifyIdentity.close).toBeCalled();
     expect(app.vm.$router.push).toBeCalledWith({ name: "home" });
+
+    netlifyIdentity.on = (action, userCB) => {
+      userCB(null);
+    };
+    netlifyIdentity.close = jest.fn();
+    app.vm.$router = { push: jest.fn() };
+    EventBus.$emit("login");
+    expect(netlifyIdentity.open).toBeCalledWith("login");
+    expect(netlifyIdentity.close).toBeCalled();
+    app.vm.$router.push = jest.fn();
+    expect(app.vm.$router.push).not.toBeCalledWith({ name: "home" });
+
+    app.vm.$router.push = jest.fn();
+    netlifyIdentity.open = jest.fn();
+    netlifyIdentity.close = jest.fn();
+    netlifyIdentity.logout = jest.fn();
+    netlifyIdentity.on = (action, userCB) => {
+      userCB(userFixture);
+    };
+    app.vm.triggerNetlifyIdentityAction("unknown action");
+    expect(app.vm.$router.push).not.toBeCalled();
+    expect(netlifyIdentity.open).not.toBeCalled();
+    expect(netlifyIdentity.close).not.toBeCalled();
+    expect(netlifyIdentity.logout).not.toBeCalled();
 
     app.destroy();
   });

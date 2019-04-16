@@ -1,5 +1,6 @@
 class Plan {
-  period;
+  period_start;
+  period_end;
   items;
 }
 
