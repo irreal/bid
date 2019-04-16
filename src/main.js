@@ -7,6 +7,7 @@ import "./registerServiceWorker";
 import VueApexCharts from "vue-apexcharts";
 import netlifyWidget from "netlify-identity-widget";
 import registerAxiosInterceptor from "./registerAxiosInterceptor";
+import { createProvider } from "./vue-apollo";
 
 registerAxiosInterceptor();
 
@@ -23,5 +24,6 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  apolloProvider: createProvider(),
   render: h => h(App)
 }).$mount("#app");
