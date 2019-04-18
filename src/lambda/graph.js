@@ -77,15 +77,16 @@ const server = new ApolloServer({
   }
 });
 
-export async function handler(event, context, callback) {
+exports.handler = async function(event, context) {
   const { user } = context.clientContext;
   if (!user) {
-    callback(null, {
+    return {
       statusCode: 401,
       body: "missing client context"
-    });
-    return;
+    };
   }
-  const GqlHandler = server.createHandler();
-  GqlHandler(event, context, callback);
-}
+  return new Promise((yay, nay) => {
+    const cb = (err, args) => (err ? nay(err) : yay(args));
+    server.createHandler()(event, context, cb);
+  });
+};
