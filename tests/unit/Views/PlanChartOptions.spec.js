@@ -1,4 +1,4 @@
-import chartOptions from "@/views/plans/PlanChartOptions.js";
+import chartOptions from "@/views/Plans/PlanChartOptions";
 describe("chart options", () => {
   it("formats the label", () => {
     expect(
